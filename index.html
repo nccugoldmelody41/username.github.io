@@ -159,6 +159,7 @@
             document.getElementById('startTestButtonContainer').style.display = 'none';
             // 顯示第一個問題
             document.getElementById('question1').style.display = 'block';
+            document.getElementById('question1').style.backgroundImage = "url('https://i.imgur.com/zrEG93J.png')";
         }
 
         function showNextQuestion(nextQuestionId) {
@@ -178,11 +179,11 @@
     // 設置下一個問題的背景圖片
         var nextQuestion = document.getElementById(nextQuestionId);
             nextQuestion.style.display = 'block';
-            nextQuestion.style.backgroundImage = "url('question" + (currentQuestion + 1) + '-bg.jpg')";
+            nextQuestion.style.backgroundImage = "url('question" + (currentQuestion + 1) + '-.png')";
 
     // 更新目前的問題編號
     currentQuestion++;
-    
+
 }
 
 
@@ -213,9 +214,15 @@
 
             document.getElementById('question' + currentQuestion).style.display = 'none';
 
+        // 設置下一個問題的背景圖片
+        var nextQuestion = document.getElementById(nextQuestionId);
+            nextQuestion.style.display = 'block';
+            nextQuestion.style.backgroundImage = "url('question" + (currentQuestion + 1) + '-.png')";
+
         // 更新目前的問題編號
         currentQuestion++;
     }
+
 
         function completeTest() {
             // 計算分數前，檢查最後一題是否有選擇答案
