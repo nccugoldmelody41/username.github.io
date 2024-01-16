@@ -185,7 +185,7 @@
             firstQuestion.style.display = 'block';
             
                  // 切換背景圖片
-          setQuestionBackground(currentQuestion - 1);
+          setQuestionBackground(0);
             
         }
 
@@ -205,7 +205,7 @@
     
     // 切換背景圖片
       currentQuestion++;
-    setQuestionBackground(currentQuestion);
+    setQuestionBackground(currentQuestion-1);
 }
 
     function setQuestionBackground(questionIndex) {
