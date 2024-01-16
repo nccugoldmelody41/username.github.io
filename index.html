@@ -146,8 +146,13 @@
 
         function startTest() {
             document.getElementById('startTestButtonContainer').style.display = 'none';
+
             // 顯示第一個問題
-            document.getElementById('question1').style.display = 'block';
+        var firstQuestion = document.getElementById('question1');
+            firstQuestion.style.display = 'block';
+
+             // 更改第一個問題的背景圖片
+            firstQuestion.style.backgroundImage = "url('https://i.imgur.com/zrEG93J.png')";
         }
 
         function showNextQuestion(nextQuestionId) {
@@ -179,26 +184,6 @@
 
             displayResult(score);
         }
-
-        function showNextQuestion(nextQuestionId) {
-        // 檢查是否有選擇答案
-            var selectedAnswer = document.querySelector('input[name="q' + currentQuestion + '"]:checked');
-            if (!selectedAnswer) {
-            alert('請選擇一個答案！');
-            return;
-        }
-
-        // 隱藏目前的問題
-            document.getElementById('question' + currentQuestion).style.display = 'none';
-
-        // 顯示下一個問題
-            document.getElementById(nextQuestionId).style.display = 'block';
-
-            document.getElementById('question' + currentQuestion).style.display = 'none';
-
-        // 更新目前的問題編號
-        currentQuestion++;
-    }
 
         function completeTest() {
             // 計算分數前，檢查最後一題是否有選擇答案
