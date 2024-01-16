@@ -165,7 +165,8 @@
 
 
     <script>
-        var currentQuestion = 0;
+        var currentQuestion = 1 ;
+        
 
         var questionBackgrounds = [
             'https://i.imgur.com/ySiwBJm.png',
@@ -200,8 +201,16 @@
       currentQuestion++;
     setQuestionBackground(currentQuestion);
 
-    // 顯示下一個問題
+  // 檢查是否還有下一個問題
+    if (currentQuestion < questionBackgrounds.length) {
+        setQuestionBackground(currentQuestion);
+
+        // 顯示下一個問題
         document.getElementById(nextQuestionId).style.display = 'block';
+    } else {
+        // 如果沒有下一個問題，顯示測驗結果
+        completeTest();
+    }
 }
 
     function setQuestionBackground(questionIndex) {
