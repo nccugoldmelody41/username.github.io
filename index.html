@@ -98,7 +98,8 @@
 <body>
     <h1>運勢測驗</h1>
 
-    <div id="startTestButtonContainer">
+   <div id="homePage">
+        <p>這是首頁</p>
         <button onclick="startTest()">開始測試</button>
     </div>
 
@@ -179,13 +180,14 @@
 
         function startTest() {
             document.getElementById('startTestButtonContainer').style.display = 'none';
-
-        // 切換背景圖片
-          setQuestionBackground(currentQuestion);
-
-            // 顯示第一個問題
+            
+                 // 顯示第一個問題
         var firstQuestion = document.getElementById('question1');
             firstQuestion.style.display = 'block';
+
+               // 切換背景圖片
+          setQuestionBackground(currentQuestion);
+
         }
 
         function showNextQuestion(nextQuestionId) {
@@ -207,14 +209,9 @@
     setQuestionBackground(currentQuestion);
 }
 
-        setQuestionBackground(currentQuestion);
-
     function setQuestionBackground(questionIndex) {
     // 確保索引在有效範圍內
     questionIndex = Math.min(Math.max(questionIndex, 0), questionBackgrounds.length - 1);
-
-    // 取得問題的 div 元素
-    var questionDiv = document.getElementById('question' + currentQuestion);
         
     // 設置背景圖片
     document.body.style.backgroundImage = "url('" + questionBackgrounds[questionIndex] + "')";
