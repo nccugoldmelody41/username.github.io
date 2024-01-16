@@ -19,8 +19,14 @@
         }
 
         question {
+            margin-bottom: 20px;
             display: none;
-            background-size: cover; 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            height: 100vh;
+            box-sizing: border-box;
+            padding: 20px;
 }
 
         @media only screen and (min-width: 601px) {
@@ -96,7 +102,10 @@
     </div>
 
 
-    <div class="question" id="question1" style="display: none; background-image: src= "https://i.imgur.com/zrEG93J.png"/>
+    <div class="question" id="question1" style="display: none; background-image: url('https://i.imgur.com/zrEG93J.png');">
+    <noscript><iframe src="https://i.imgur.com/zrEG93J.png" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+
         <p>你現在已經把包包準備好要出門了，這時你發現還有一個空位可以塞東西，你會多帶什麼？</p>
         <div class="options">
             <label><input type="radio" name="q1" value="1000"> 環保餐具</label>
@@ -108,6 +117,9 @@
     </div>
 
     <div class="question" id="question2" style="display: none; background-image: url('https://i.imgur.com/v0VXVlu.png');">
+        <noscript><iframe src="https://i.imgur.com/v0VXVlu.png" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+
             <p>如果在去上課的途中，你發現你的錢包不見了，你會怎麼做？</p>
         <div class="options">
             <label><input type="radio" name="q2" value="100"> 先問剛剛跟自己待在一起的夥伴</label>
@@ -119,6 +131,10 @@
     </div>
   
    <div class="question" id="question3" style="display: none; background-image: url('https://i.imgur.com/QDEW3uN.png');">
+
+    <noscript><iframe src="https://i.imgur.com/QDEW3uN.png" height="0" width="0"
+        style="display:none;visibility:hidden"></iframe></noscript>
+
         <p>上完課了，路上突然冒出一個人塞給你一個東西，告訴你：「帶上這個東西吧，它對你很有幫助」你覺得會是什麼？</p>
         <div class="options">
             <label><input type="radio" name="q3" value="1"> 青花瓷</label>
@@ -130,6 +146,10 @@
     </div>
   
    <div class="question" id="question4" style="display: none; background-image: url('https://i.imgur.com/Z2t8fue.png');">
+
+    <noscript><iframe src="https://i.imgur.com/Z2t8fue.png" height="0" width="0"
+        style="display:none;visibility:hidden"></iframe></noscript>
+    
         <p>背上你的行囊，現在你面前有一個任意門，你想去哪裡？</p>
         <div class="options">
             <label><input type="radio" name="q4" value="100"> B612星球</label>
