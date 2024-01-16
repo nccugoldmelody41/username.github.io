@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>運勢測驗</title>
+     <style>
+        body {
+            background-size: cover; /* 使背景圖片覆蓋整個屏幕 */
+            background-position: contain; /* 設置背景圖片位置為中心 */
+            color: #000000; /* 設置文字顏色，以便在背景上可讀取 */
+            font-family: , ; /* 設置字體 */}
+
+         @media only screen and (max-width: 600px) {
+            body {
+                background-image: url('https://megapx-assets.dcard.tw/images/c556d922-ccfb-447e-814b-1907c3d1efc0/1280.webp'); /* 手機版背景圖片 URL */
+            }
+        }
+
+        @media only screen and (min-width: 601px) {
+            body {
+                background-image: url(https://megapx-assets.dcard.tw/images/29b1bb0d-408e-43bc-a4aa-4be50c632066/1280.webp); /* 電腦版背景圖片 URL */
+            }
+        }
+
+     </style>
+
+     <style>
+    /*一般樣式 */
+        body {
+            font-family: 'Arial', sans-serif;
+            padding: 20px;
+             }
+
+    /* 手機版樣式 */
+        @media only screen and (max-width: 600px) {
+        body {
+            padding: 10px;
+             } 
+        }
+     </style>
+
+     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .question {
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .options {
+            display: flex;
+            justify-content: center;
+        }
+
+        .options label {
+            margin: 0 10px;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold; 
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            position: relative;
+            top: 20px; /* 距離上方的位置 */
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <h1>運勢測驗</h1>
+
+    <div id="startTestButtonContainer">
+        <button onclick="startTest()">開始測試</button>
+    </div>
+
+
+    <div class="question" id="question1" style="display: none;">
+        <p>你現在已經把包包準備好要出門了，這時你發現還有一個空位可以塞東西，你會多帶什麼？</p>
+        <div class="options">
+            <label><input type="radio" name="q1" value="1000"> 環保餐具</label>
+            <label><input type="radio" name="q1" value="100"> 止汗劑</label>
+            <label><input type="radio" name="q1" value="10"> 筆記本</label>
+            <label><input type="radio" name="q1" value="1"> 集點卡</label>
+        </div>
+       <button onclick="showNextQuestion('question2')">下一題</button>
+    </div>
+
+    <div class="question" id="question2" style="display: none;">
+            <p>如果在去上課的途中，你發現你的錢包不見了，你會怎麼做？</p>
+        <div class="options">
+            <label><input type="radio" name="q2" value="100"> 先問剛剛跟自己待在一起的夥伴</label>
+            <label><input type="radio" name="q2" value="10"> 先去上課</label>
+            <label><input type="radio" name="q2" value="1"> 媽呀是錢包欸，馬上報警</label>
+            <label><input type="radio" name="q2" value="1000"> 唉呀隨便啦，等等再說，該出現就會出現</label>
+        </div>
+      <button onclick="showNextQuestion('question3')">下一題</button>
+    </div>
+  
+   <div class="question" id="question3" style="display: none;">
+        <p>上完課了，路上突然冒出一個人塞給你一個東西，告訴你：「帶上這個東西吧，它對你很有幫助」你覺得會是什麼？</p>
+        <div class="options">
+            <label><input type="radio" name="q3" value="1"> 青花瓷</label>
+            <label><input type="radio" name="q3" value="1000"> 能量藥水</label>
+            <label><input type="radio" name="q3" value="100"> 魔鏡</label>
+            <label><input type="radio" name="q3" value="10"> 紫水晶/水晶球</label>
+        </div>
+     <button onclick="showNextQuestion('question4')">下一題</button>
+    </div>
+  
+   <div class="question" id="question4" style="display: none;">
+        <p>背上你的行囊，現在你面前有一個任意門，你想去哪裡？</p>
+        <div class="options">
+            <label><input type="radio" name="q4" value="100"> B612星球</label>
+            <label><input type="radio" name="q4" value="1000"> 桃花源</label>
+            <label><input type="radio" name="q4" value="1"> 亞特蘭提斯</label>
+            <label><input type="radio" name="q4" value="10"> 月球的背面</label>
+
+        </div>
+     <button onclick="completeTest()">完成測驗</button>
+    </div>
+
+  <div class="result" id="result">
+
+        </div>
+
+
+    <script>
+        var currentQuestion = 1;
+
+        function startTest() {
+            document.getElementById('startTestButtonContainer').style.display = 'none';
+            // 顯示第一個問題
+            document.getElementById('question1').style.display = 'block';
+        }
+
+        function showNextQuestion(nextQuestionId) {
+    // 檢查是否有選擇答案
+        var selectedAnswer = document.querySelector('input[name="q' + currentQuestion + '"]:checked');
+        if (!selectedAnswer) {
+        alert('請選擇一個答案！');
+        return;
+    }
+
+    // 隱藏目前的問題
+        document.getElementById('question' + currentQuestion).style.display = 'none';
+
+    // 顯示下一個問題
+        document.getElementById(nextQuestionId).style.display = 'block';
+
+    // 更新目前的問題編號
+    currentQuestion++;
+}
+
+
+        function calculateScore() {
+            var score = 0;
+            var answers = document.querySelectorAll('input[name^="q"]:checked');
+
+            for (var i = 0; i < answers.length; i++) {
+                score += parseInt(answers[i].value);
+            }
+
+            displayResult(score);
+        }
+
+        function showNextQuestion(nextQuestionId) {
+        // 檢查是否有選擇答案
+            var selectedAnswer = document.querySelector('input[name="q' + currentQuestion + '"]:checked');
+            if (!selectedAnswer) {
+            alert('請選擇一個答案！');
+            return;
+        }
+
+        // 隱藏目前的問題
+            document.getElementById('question' + currentQuestion).style.display = 'none';
+
+        // 顯示下一個問題
+            document.getElementById(nextQuestionId).style.display = 'block';
+
+            document.getElementById('question' + currentQuestion).style.display = 'none';
+
+        // 更新目前的問題編號
+        currentQuestion++;
+    }
+
+        function completeTest() {
+            // 計算分數前，檢查最後一題是否有選擇答案
+            var selectedAnswer = document.querySelector('input[name="q4"]:checked');
+            if (!selectedAnswer) {
+                alert('請選擇一個答案！');
+                return;
+    }
+            // 隱藏目前的問題
+            document.getElementById('question' + currentQuestion).style.display = 'none';
+
+            // 顯示測驗結果
+            calculateScore();
+            document.getElementById('result').style.display = 'block';
+}
+
+
+        function displayResult(score) {
+         var resultDiv = document.getElementById('result');
+         var result = '';
+
+         if (score > 2000 && score !== 2002 && score !== 2020 && score !== 2200) {
+        result = '測驗結果為健康';
+            } else if (score >= 1200 && score <= 2000) {
+        result = '測驗結果為愛情';
+            } else if ([40, 31, 130, 1030, 121, 1021, 1120].includes(score)) {
+        result = '測驗結果為事業';
+            } else if ([4, 13, 103, 1003, 112, 1012, 1102].includes(score)) {
+        result = '測驗結果為財富';
+             } else if ([2002, 2020, 2200, 220, 202, 22, 1111].includes(score)) {
+        result = '測驗結果為矛盾';
+    }
+
+    resultDiv.innerHTML = result;
+}
+
+    </script>
+</body>
+</html>
