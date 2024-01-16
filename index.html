@@ -214,6 +214,9 @@
         
     // 設置背景圖片
     document.body.style.backgroundImage = "url('" + questionBackgrounds[questionIndex] + "')";
+    document.body.style.backgroundSize = "cover"; // 使背景圖片覆蓋整個屏幕
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundPosition = "center center";
 }
 
         function calculateScore() {
