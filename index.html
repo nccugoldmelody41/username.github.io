@@ -198,18 +198,21 @@
     // 隱藏目前的問題
         document.getElementById('question' + currentQuestion).style.display = 'none';
 
+    // 顯示下一個問題
+        document.getElementById(nextQuestionId).style.display = 'block';
+    
     // 切換背景圖片
       currentQuestion++;
     setQuestionBackground(currentQuestion);
-
-    // 顯示下一個問題
-        document.getElementById(nextQuestionId).style.display = 'block';
 }
 
     function setQuestionBackground(questionIndex) {
     // 確保索引在有效範圍內
     questionIndex = Math.min(Math.max(questionIndex, 0), questionBackgrounds.length - 1);
 
+    // 取得問題的 div 元素
+    var questionDiv = document.getElementById('question' + currentQuestion);
+        
     // 設置背景圖片
     document.body.style.backgroundImage = "url('" + questionBackgrounds[questionIndex] + "')";
     document.body.style.backgroundSize = "cover"; // 使背景圖片覆蓋整個屏幕
