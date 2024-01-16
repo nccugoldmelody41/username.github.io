@@ -169,8 +169,18 @@
     <script>
         var currentQuestion = 1;
 
+        var questionBackgrounds = [
+            'https://i.imgur.com/zrEG93J.png',
+            'https://i.imgur.com/v0VXVlu.png',
+            'https://i.imgur.com/QDEW3uN.png',
+            'https://i.imgur.com/Z2t8fue.png'
+];
+
         function startTest() {
             document.getElementById('startTestButtonContainer').style.display = 'none';
+
+        // 切換背景圖片
+          setQuestionBackground(currentQuestion);
 
             // 顯示第一個問題
         var firstQuestion = document.getElementById('question1');
@@ -188,13 +198,22 @@
     // 隱藏目前的問題
         document.getElementById('question' + currentQuestion).style.display = 'none';
 
+    // 切換背景圖片
+      currentQuestion++;
+    setQuestionBackground(currentQuestion);
+
     // 顯示下一個問題
         document.getElementById(nextQuestionId).style.display = 'block';
-
-    // 更新目前的問題編號
-    currentQuestion++;
 }
 
+    function setQuestionBackground(questionIndex) {
+    // 確保索引在有效範圍內
+    questionIndex = Math.min(Math.max(questionIndex, 0), questionBackgrounds.length - 1);
+
+    // 設置背景圖片
+    document.body.style.backgroundImage = "url('" + questionBackgrounds[questionIndex] + "')";
+    document.body.style.backgroundSize = "cover"; // 使背景圖片覆蓋整個屏幕
+}
 
         function calculateScore() {
             var score = 0;
