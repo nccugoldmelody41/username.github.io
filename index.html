@@ -8,9 +8,32 @@
      <style>
         body {
             background-size: cover; /* 使背景圖片覆蓋整個屏幕 */
-            background-position: contain; /* 設置背景圖片位置為中心 */
+            background-position: center center; /* 設置背景圖片位置為中心 */
             color: #000000; /* 設置文字顏色，以便在背景上可讀取 */
             font-family: , ; /* 設置字體 */}
+
+         @media only screen and (max-width: 600px) {
+            body {
+                background-image: url('https://megapx-assets.dcard.tw/images/c556d922-ccfb-447e-814b-1907c3d1efc0/1280.webp'); /* 手機版背景圖片 URL */
+            }
+        }
+
+        @media only screen and (min-width: 601px) {
+            body {
+                background-image: url('https://i.imgur.com/kHmr6B1.png'); /* 電腦版背景圖片 URL */
+            }
+        }
+
+           .question {
+            margin-bottom: 20px;
+            display: none;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            height: 100vh; /* 使背景圖片充滿整個視窗高度 */
+            box-sizing: border-box;
+            padding: 20px;
+        }
 
      </style>
 
@@ -74,7 +97,7 @@
 <body>
     <h1>運勢測驗</h1>
 
-    <div class="start" id="startTestButtonContainer"style="display: none; background-image: url('https://i.imgur.com/zrEG93J.png');">
+    <div id="startTestButtonContainer">
         <button onclick="startTest()">開始測試</button>
     </div>
 
@@ -132,19 +155,11 @@
     <script>
         var currentQuestion = 1;
 
-           function startTest() {
+        function startTest() {
             document.getElementById('startTestButtonContainer').style.display = 'none';
-
-            // 取消第一頁的背景圖片
-            document.getElementById('start').style.backgroundImage = "none";
-
-            // 設置問題2的背景圖片
-            document.getElementById('question1').style.backgroundImage = "url('https://i.imgur.com/zrEG93J.png')";
-
             // 顯示第一個問題
             document.getElementById('question1').style.display = 'block';
         }
-
 
         function showNextQuestion(nextQuestionId) {
     // 檢查是否有選擇答案
@@ -160,8 +175,14 @@
     // 顯示下一個問題
         document.getElementById(nextQuestionId).style.display = 'block';
 
+    // 設置下一個問題的背景圖片
+        var nextQuestion = document.getElementById(nextQuestionId);
+            nextQuestion.style.display = 'block';
+            nextQuestion.style.backgroundImage = "url('question" + (currentQuestion + 1) + '-bg.jpg')";
+
     // 更新目前的問題編號
     currentQuestion++;
+    
 }
 
 
