@@ -10,6 +10,7 @@
             background-size: cover; /* 使背景圖片覆蓋整個屏幕 */
             background-position: center center; /* 設置背景圖片位置為中心 */
             background-repeat: no-repeat;
+            background-repeat: "100%" ;
             color: #000000; /* 設置文字顏色，以便在背景上可讀取 */
             font-family: , ; /* 設置字體 */}
 
@@ -216,6 +217,7 @@
     document.body.style.backgroundImage = "url('" + questionBackgrounds[questionIndex] + "')";
     document.body.style.backgroundSize = "cover"; // 使背景圖片覆蓋整個屏幕
     document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundRepeat = "100%";
 }
 
         function calculateScore() {
