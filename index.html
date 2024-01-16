@@ -102,7 +102,7 @@
     </div>
 
 
-    <div class="question" id="question1" style="display: none; background-image: url('https://i.imgur.com/zrEG93J.png');">
+    <div class="question" id="question1">
     <noscript><iframe src="https://i.imgur.com/zrEG93J.png" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
 
@@ -116,7 +116,7 @@
        <button onclick="showNextQuestion('question2')">下一題</button>
     </div>
 
-    <div class="question" id="question2" style="display: none; background-image: url('https://i.imgur.com/v0VXVlu.png');">
+    <div class="question" id="question2">
         <noscript><iframe src="https://i.imgur.com/v0VXVlu.png" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
 
@@ -130,7 +130,7 @@
       <button onclick="showNextQuestion('question3')">下一題</button>
     </div>
   
-   <div class="question" id="question3" style="display: none; background-image: url('https://i.imgur.com/QDEW3uN.png');">
+   <div class="question" id="question3">
 
     <noscript><iframe src="https://i.imgur.com/QDEW3uN.png" height="0" width="0"
         style="display:none;visibility:hidden"></iframe></noscript>
@@ -145,11 +145,11 @@
      <button onclick="showNextQuestion('question4')">下一題</button>
     </div>
   
-   <div class="question" id="question4" style="display: none; background-image: url('https://i.imgur.com/Z2t8fue.png');">
+   <div class="question" id="question4">
 
     <noscript><iframe src="https://i.imgur.com/Z2t8fue.png" height="0" width="0"
         style="display:none;visibility:hidden"></iframe></noscript>
-    
+
         <p>背上你的行囊，現在你面前有一個任意門，你想去哪裡？</p>
         <div class="options">
             <label><input type="radio" name="q4" value="100"> B612星球</label>
@@ -175,9 +175,6 @@
             // 顯示第一個問題
         var firstQuestion = document.getElementById('question1');
             firstQuestion.style.display = 'block';
-
-             // 更改第一個問題的背景圖片
-            firstQuestion.style.backgroundImage = "url('https://i.imgur.com/zrEG93J.png')";
         }
 
         function showNextQuestion(nextQuestionId) {
