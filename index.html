@@ -179,16 +179,14 @@
 
         function startTest() {
             document.getElementById('startTestButtonContainer').style.display = 'none';
-
-               // 切換背景圖片
-          setQuestionBackground(startTestButtonContainer);
             
                  // 顯示第一個問題
         var firstQuestion = document.getElementById('question1');
             firstQuestion.style.display = 'block';
-
-
-
+            
+                 // 切換背景圖片
+          setQuestionBackground(0);
+            
         }
 
         function showNextQuestion(nextQuestionId) {
