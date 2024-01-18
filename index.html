@@ -8,12 +8,15 @@
      <style>
             
         body {
-          min-height: 100vh;
-          background-size: cover;
-          background-position: center center;
-          background-repeat: no-repeat;
-          color: #000000;
-          font-family: 'Arial', sans-serif;
+           min-height: 100vh;
+           min-width: 100vw;
+           margin: 0;
+           background-size: cover;
+           background-position: center center;
+           background-repeat: no-repeat;
+           color: #000000;
+           font-family: 'Arial', sans-serif;
+           overflow: hidden; /* 禁用滾動條 */
         }
          
          @media only screen and (max-width: 600px) {
@@ -23,6 +26,8 @@
         }
 
         .question {
+            max-width: 600px; /* 限制問題區塊的最大寬度 */
+            margin: 0 auto; /* 水平居中 */
             height: 100vh;
             min-height: 100vh;
             display: none;
@@ -71,6 +76,8 @@
         }
 
         .options {
+            max-width: 400px; /* 限制選項的最大寬度 */
+            margin: 0 auto; /* 水平居中 */
             display: flex;
             justify-content: center;
         }
@@ -82,6 +89,8 @@
         #result {
             margin-top: 20px;
             font-weight: bold; 
+            max-width: 600px; /* 限制結果區塊的最大寬度 */
+            margin: 0 auto; /* 水平居中 */
         }
 
         button {
