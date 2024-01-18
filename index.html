@@ -23,11 +23,17 @@
         }
 
         .question {
-            display: none;
-            background-size: cover;
-            background-repeat: no-repeat;
-            padding-top: 50px;
-        }
+        margin-bottom: 20px;
+        display: none;
+        padding-top: 50px; /* 頂部內邊距 */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        height: 100vh;
+        box-sizing: border-box;
+        padding: 20px;
+        text-align: left; /* 左對齊 */
+    }
 
          /* 添加一個名為 "first-page" 的 class，用於標識第一頁 */
          .first-page .question {
@@ -74,14 +80,14 @@
         }
 
         .options {
-            margin-bottom: 80px; 
-            display: flex;
-            justify-content: center;
-        }
+         display: flex;
+         justify-content: flex-start; /* 左對齊 */
+         flex-direction: column; /* 垂直排列 */
+    }
 
-        .options label {
-            margin: 0 10px;
-        }
+    .options label {
+         margin: 0 10px;
+    }
 
         #result {
             margin-top: 20px;
@@ -95,7 +101,8 @@
             cursor: pointer;
             position: relative;
             top: 20px; /* 距離上方的位置 */
-        }
+            padding: 10px;
+       }
 
     </style>
 
