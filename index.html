@@ -14,7 +14,7 @@
          
         body {
             min-height: 100vh;
-            background-size: cover; /* 使背景圖片覆蓋整個屏幕 */
+            background-size: 100% 100%;
             background-position: center center; /* 設置背景圖片位置為中心 */
             background-repeat: no-repeat;
             color: #000000; /* 設置文字顏色，以便在背景上可讀取 */
@@ -31,7 +31,7 @@
             min-height: 100vh;
             margin-bottom: 20px;
             display: none;
-            background-size: cover;
+            background-size: 100% 100%;
             background-repeat: no-repeat;
             background-position: center center;
             box-sizing: border-box;
@@ -222,7 +222,7 @@
         
     // 設置背景圖片
     document.body.style.backgroundImage = "url('" + questionBackgrounds[questionIndex] + "')";
-    document.body.style.backgroundSize = "cover"; // 使背景圖片覆蓋整個屏幕
+    document.body.style.backgroundSize = "100% 100%"; // 使背景圖片覆蓋整個屏幕
     document.body.style.backgroundRepeat = "no-repeat";
 }
 
