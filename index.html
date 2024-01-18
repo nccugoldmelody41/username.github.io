@@ -7,7 +7,7 @@
     <title>運勢測驗</title>
      <style>
         body {
-            background-size: auto; /* 使背景圖片覆蓋整個屏幕 */
+            background-size: cover; /* 使背景圖片覆蓋整個屏幕 */
             background-position: center center; /* 設置背景圖片位置為中心 */
             background-repeat: no-repeat;
             color: #000000; /* 設置文字顏色，以便在背景上可讀取 */
@@ -211,7 +211,6 @@
     // 設置背景圖片
     document.body.style.backgroundImage = "url('" + questionBackgrounds[questionIndex] + "')";
     document.body.style.backgroundSize = "auto"; // 使背景圖片覆蓋整個屏幕
-    document.body.style.background-position= "center center" ; /* 設置背景圖片位置為中心 */
     document.body.style.backgroundRepeat = "no-repeat";
 }
 
