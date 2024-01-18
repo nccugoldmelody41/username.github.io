@@ -105,7 +105,8 @@
 </head>
 
 <body>
-    <h1>運勢測驗</h1>
+ <div id="quizContainer">
+    <h1>金日冒險物語</h1>
 
   <div id="startTestButtonContainer">
         <button onclick="startTest()">開始測試</button>
@@ -186,7 +187,13 @@
             'https://i.imgur.com/Z2t8fue.png'
 ];
 
+        function hideQuizTitle() {
+        // 隱藏運勢測驗標題
+        document.querySelector('#quizContainer h1').style.display = 'none';
+}
+
         function startTest() {
+            hideQuizTitle();
             document.getElementById('startTestButtonContainer').style.display = 'none';
             
                  // 顯示第一個問題
@@ -228,6 +235,7 @@
 }
 
         function calculateScore() {
+            hideQuizTitle();
             var score = 0;
             var answers = document.querySelectorAll('input[name^="q"]:checked');
 
@@ -239,6 +247,7 @@
         }
 
         function completeTest() {
+            hideQuizTitle();
             // 計算分數前，檢查最後一題是否有選擇答案
             var selectedAnswer = document.querySelector('input[name="q4"]:checked');
             if (!selectedAnswer) {
