@@ -9,7 +9,7 @@
         body {
             background-size: cover; /* 使背景圖片覆蓋整個屏幕 */
             background-repeat: no-repeat;
-            background-position: bottom;
+            background-position: center;
             color: #000000; /* 設置文字顏色，以便在背景上可讀取 */
             font-family: , ; /* 設置字體 */}
 
@@ -22,7 +22,7 @@
         question {
             display: none;
             background-size: cover;
-            background-position: bottom;
+            background-position: center;
             background-repeat: no-repeat;
             
            }
@@ -211,8 +211,9 @@
         
     // 設置背景圖片
     document.body.style.backgroundImage = "url('" + questionBackgrounds[questionIndex] + "')";
-    document.body.style.backgroundSize = "contain"; // 使背景圖片覆蓋整個屏幕
+    document.body.style.backgroundSize = "cover"; // 使背景圖片覆蓋整個屏幕
     document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.background-position: center;   
  }
 
         function calculateScore() {
