@@ -7,9 +7,9 @@
     <title>運勢測驗</title>
      <style>
         body {
-            background-size: cover; /* 使背景圖片覆蓋整個屏幕 */
-            background-position: center center; /* 設置背景圖片位置為中心 */
+            background-size: contain; /* 使背景圖片覆蓋整個屏幕 */
             background-repeat: no-repeat;
+            background-position: bottom;
             color: #000000; /* 設置文字顏色，以便在背景上可讀取 */
             font-family: , ; /* 設置字體 */}
 
@@ -21,8 +21,10 @@
 
         question {
             display: none;
-            background-size: cover;
+            background-size: contain;
+            background-position: bottom;
             background-repeat: no-repeat;
+            
            }
 
         @media only screen and (min-width: 601px) {
@@ -209,9 +211,9 @@
         
     // 設置背景圖片
     document.body.style.backgroundImage = "url('" + questionBackgrounds[questionIndex] + "')";
-    document.body.style.backgroundSize = "cover"; // 使背景圖片覆蓋整個屏幕
+    document.body.style.backgroundSize = "contain"; // 使背景圖片覆蓋整個屏幕
     document.body.style.backgroundRepeat = "no-repeat";
-}
+ }
 
         function calculateScore() {
             var score = 0;
