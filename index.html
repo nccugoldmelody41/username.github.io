@@ -62,9 +62,18 @@ body {
             color: #333;
         }
 
+         /* 開始測驗按鈕樣式 */
+       #startTestButtonContainer button {
+           padding: 10px;
+           font-size: 16px;
+           cursor: pointer;
+           margin-bottom: 10px; /* 添加底部間距 */
+
         .question {
             margin-bottom: 20px;
             display: none;
+            top: 300px; /* 距離底部的位置 */
+            left: 50px; /* 距離右邊的位置 */
         }
 
         .options {
@@ -72,6 +81,8 @@ body {
             margin: 0 auto; /* 水平居中 */
             display: flex;
             justify-content: flex-end;
+            top: 370px; /* 距離底部的位置 */
+            left: 50px; /* 距離右邊的位置 */
         }
 
         .options label {
@@ -85,13 +96,13 @@ body {
             margin: 0 auto; /* 水平居中 */
         }
 
-        button {
+        .question button {
             padding: 10px;
             font-size: 16px;
             cursor: pointer;
             position: relative;
-            top: 390px; /* 距離底部的位置 */
-            left: 500px; /* 距離右邊的位置 */
+            top: 390px; /* 距離上部的位置 */
+            left: 500px; /* 距離左邊的位置 */
         }
 
     </style>
