@@ -354,7 +354,27 @@
         function startTest() {
             hideQuizTitle();
             document.getElementById('startTestButtonContainer').style.display = 'none';
-            
+
+             // 檢查是手機版還是電腦版
+        if (isMobile()) {
+            // 手機版
+            showMobileQuestion(1);
+        } else {
+            // 電腦版
+            showDesktopQuestion(1);
+        }
+    }
+
+        // 檢測是否為手機版
+        function isMobile() {
+            return window.innerWidth <= 600; // 假設寬度小於等於 600px 為手機版
+        }
+        
+        // 在手機版顯示問題
+        function showMobileQuestion(questionNumber) {
+            var currentQuestion = document.getElementById('question' + questionNumber);
+            currentQuestion.style.display = 'block';
+
                  // 顯示第一個問題
         var firstQuestion = document.getElementById('question1');
             firstQuestion.style.display = 'block';
@@ -365,10 +385,44 @@
             question.style.display = 'none';
         }
 
-                 // 切換背景圖片
-          setQuestionBackground(0);
-            
+                // 切換手機版背景圖片
+            setMobileQuestionBackground(questionNumber - 1);
         }
+        
+            // 在電腦版顯示問題
+        function showDesktopQuestion(questionNumber) {
+            // 顯示第一個問題
+            var firstQuestion = document.getElementById('question' + questionNumber);
+            firstQuestion.style.display = 'block';
+        
+            // 隱藏其他問題
+            for (var i = 1; i <= 4; i++) {
+                if (i !== questionNumber) {
+                    var question = document.getElementById('question' + i);
+                    question.style.display = 'none';
+        }
+    }
+        
+            // 切換背景圖片
+            setQuestionBackground(questionNumber - 1);
+        }
+
+            // 在手機版切換背景圖片
+            function setMobileQuestionBackground(questionIndex) {
+                // 修改為手機版的背景圖片路徑
+                var mobileBackgrounds = [
+                    'https://i.imgur.com/c5EReNH.png',
+                    'https://i.imgur.com/mkyouOp.png',
+                    'https://i.imgur.com/3F2Ta5H.png',
+                    'https://i.imgur.com/kvZqkGj.png'
+                ];
+
+    questionIndex = Math.min(Math.max(questionIndex, 0), mobileBackgrounds.length - 1);
+
+    document.body.style.backgroundImage = "url('" + mobileBackgrounds[questionIndex] + "')";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundRepeat = "no-repeat";
+}
 
         function showNextQuestion(nextQuestionId) {
     // 檢查是否有選擇答案
