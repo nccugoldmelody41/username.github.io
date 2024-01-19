@@ -21,8 +21,7 @@
         
          body {
             background-repeat: no-repeat;
-            backgroundSize: contain;
-            background-position: center center;
+            backgroundSize: cover;
             overflow: hidden;
             margin: 0;
         }
@@ -185,27 +184,6 @@
 
 
     <script>
-       function resizeBackground() {
-            var windowWidth = window.innerWidth;
-            var windowHeight = window.innerHeight;
-            var aspectRatio = windowWidth / windowHeight;
-
-            var backgroundImage = 'url("https://i.imgur.com/lHJxT59.png")';
-
-            if (aspectRatio > 16 / 9) {
-                document.body.style.backgroundSize = 'auto 100%';
-                document.body.style.backgroundImage = backgroundImage;
-            } else {
-                document.body.style.backgroundSize = '100% auto';
-                document.body.style.backgroundImage = backgroundImage;
-            }
-        }
-
-        // 初始化時調整背景大小
-        resizeBackground();
-
-        // 窗口大小變化時重新調整背景大小
-        window.addEventListener('resize', resizeBackground);
 
         var currentQuestion = 1;
 
