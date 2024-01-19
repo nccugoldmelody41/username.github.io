@@ -314,7 +314,6 @@
 
         </div>
 
-
     <script>
 
         var currentQuestion = 1;
@@ -353,15 +352,17 @@
         // 在手機版顯示問題
         function showMobileQuestion(questionNumber) {
             console.log("Showing mobile question: " + questionNumber);
-            
-            var currentQuestion = document.getElementById('question' + questionNumber);
-            currentQuestion.style.display = 'block';
-    
+              
                 // 隱藏其他問題
-        for (var i = 2; i <= 4; i++) {
+        for (var i = 1; i <= 4; i++) {
             var question = document.getElementById('question' + i);
             question.style.display = 'none';
+             if (i === questionNumber) {
+            question.style.display = 'block';
+        } else {
+            question.style.display = 'none';
         }
+    }
 
                 // 切換手機版背景圖片
             setMobileQuestionBackground(questionNumber - 1);
