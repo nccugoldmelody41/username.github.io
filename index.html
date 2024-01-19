@@ -313,6 +313,13 @@
                  // 顯示第一個問題
         var firstQuestion = document.getElementById('question1');
             firstQuestion.style.display = 'block';
+    
+                // 隱藏其他問題
+        for (var i = 2; i <= 4; i++) {
+            var question = document.getElementById('question' + i);
+            question.style.display = 'none';
+        }
+
             
                  // 切換背景圖片
           setQuestionBackground(0);
