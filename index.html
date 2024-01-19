@@ -24,6 +24,13 @@
             }
         }
 
+        @media only screen and (min-width: 601px) {
+        body {
+            background-image: url('https://i.imgur.com/a31jbfl.png'); /* 電腦版背景圖片 URL */
+            padding: 20px; /* 調整電腦版 padding */
+        }
+    }
+
         h1 {
             color: #333;
             text-align: center;
@@ -53,9 +60,8 @@
             margin-bottom: 10px; /* 調整底部間距 */
             position: fixed;
             bottom: 140px; /* 距離底部的位置 */
-            left: 50%; /* 距離左邊的位置 */
-            transform: translateX(-50%); /* 使文字居中 */
-        }
+            left: 10%; /* 距離左邊的位置 */
+           }
 
         .question button {
             padding: 10px;
@@ -63,18 +69,15 @@
             cursor: pointer;
             position: fixed;
             bottom: 40px; /* 距離底部的位置 */
-            right: 50%;
-            transform: translateX(50%); /* 使按鈕居中 */
+            right: 20%;
         }
 
         .options {
             display: flex;
-            flex-direction: column; /* 垂直排列選項 */
             align-items: flex-end; /* 靠右對齊選項 */
             position: fixed;
             bottom: 100px; /* 距離底部的位置 */
-            left: 50%; /* 距離左邊的位置 */
-            transform: translateX(-50%); /* 使選項居中 */
+            left: 10%; /* 距離左邊的位置 */
         }
 
         .options label {
