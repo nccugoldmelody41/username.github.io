@@ -7,6 +7,11 @@
     <title>金日冒險物語</title>
 
  <style>
+         @font-face {
+           font-family: 'BoutiqueBitmap9x9_Bold';
+           src: url('fonts/BoutiqueBitmap9x9_Bold_1.7.ttf') format('truetype');
+           /* 如果字體文件有其他格式，也可以添加相應的src */
+     
         /* 公共樣式，適用於電腦版和手機版 */
         body {
             font-family: 'BoutiqueBitmap9x9_Bold', sans-serif;
@@ -25,7 +30,6 @@
             top: 50%;
         }
 
-        /* 其他樣式設定 */
 
         /* 電腦版樣式 */
         @media only screen and (min-width: 601px) {
@@ -34,6 +38,17 @@
                 padding: 20px; /* 調整電腦版 padding */
             }
 
+            body {
+                white-space: nowrap; /* 不換行 */
+            }
+
+                h1,
+                .question p,
+                .options label,
+                #result {
+                  white-space: nowrap; /* 不換行 */
+        }
+        
             /* 電腦版文字位置和選項排列方式 */
             button {
              
