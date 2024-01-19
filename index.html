@@ -21,6 +21,7 @@
         
          body {
             background-repeat: no-repeat;
+            backgroundSize: contain;
             background-position: center center;
             overflow: hidden;
             margin: 0;
@@ -206,7 +207,6 @@
         // 窗口大小變化時重新調整背景大小
         window.addEventListener('resize', resizeBackground);
 
-        
         var currentQuestion = 1;
 
         var questionBackgrounds = [
@@ -259,7 +259,7 @@
         
     // 設置背景圖片
     document.body.style.backgroundImage = "url('" + questionBackgrounds[questionIndex] + "')";
-    document.body.style.backgroundSize = "contain"; // 使背景圖片覆蓋整個屏幕
+    document.body.style.backgroundSize = "cover"; // 使背景圖片覆蓋整個屏幕
     document.body.style.backgroundRepeat = "no-repeat";
 }
 
