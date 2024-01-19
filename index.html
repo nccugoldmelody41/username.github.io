@@ -189,26 +189,6 @@
             margin-bottom: 20px;
             display: none;
         }
-
-            /* 顯示第一個手機版問題 */
-        #question1.mobile {
-            display: block;
-        }
-
-            /* 顯示第一個手機版問題 */
-        #question2.mobile {
-            display: block;
-        }
-
-           /* 顯示第一個手機版問題 */
-        #question3.mobile {
-            display: block;
-        }
-
-            /* 顯示第一個手機版問題 */
-        #question4.mobile {
-            display: block;
-        }
             
         .question p {
             font-size: 20px; /* 調整文字大小 */
@@ -374,10 +354,6 @@
         function showMobileQuestion(questionNumber) {
             var currentQuestion = document.getElementById('question' + questionNumber);
             currentQuestion.style.display = 'block';
-
-                 // 顯示第一個問題
-        var firstQuestion = document.getElementById('question1');
-            firstQuestion.style.display = 'block';
     
                 // 隱藏其他問題
         for (var i = 2; i <= 4; i++) {
@@ -388,6 +364,22 @@
                 // 切換手機版背景圖片
             setMobileQuestionBackground(questionNumber - 1);
         }
+
+        function setMobileQuestionBackground(questionIndex) {
+                // 修改為手機版的背景圖片路徑
+                var mobileBackgrounds = [
+                    'https://i.imgur.com/c5EReNH.png',
+                    'https://i.imgur.com/mkyouOp.png',
+                    'https://i.imgur.com/3F2Ta5H.png',
+                    'https://i.imgur.com/kvZqkGj.png'
+                ];
+
+             questionIndex = Math.min(Math.max(questionIndex, 0), mobileBackgrounds.length - 1);
+
+                document.body.style.backgroundImage = "url('" + mobileBackgrounds[questionIndex] + "')";
+                document.body.style.backgroundSize = "cover";
+                document.body.style.backgroundRepeat = "no-repeat";
+}
         
             // 在電腦版顯示問題
         function showDesktopQuestion(questionNumber) {
@@ -406,23 +398,6 @@
             // 切換背景圖片
             setQuestionBackground(questionNumber - 1);
         }
-
-            // 在手機版切換背景圖片
-            function setMobileQuestionBackground(questionIndex) {
-                // 修改為手機版的背景圖片路徑
-                var mobileBackgrounds = [
-                    'https://i.imgur.com/c5EReNH.png',
-                    'https://i.imgur.com/mkyouOp.png',
-                    'https://i.imgur.com/3F2Ta5H.png',
-                    'https://i.imgur.com/kvZqkGj.png'
-                ];
-
-    questionIndex = Math.min(Math.max(questionIndex, 0), mobileBackgrounds.length - 1);
-
-    document.body.style.backgroundImage = "url('" + mobileBackgrounds[questionIndex] + "')";
-    document.body.style.backgroundSize = "cover";
-    document.body.style.backgroundRepeat = "no-repeat";
-}
 
         function showNextQuestion(nextQuestionId) {
     // 檢查是否有選擇答案
