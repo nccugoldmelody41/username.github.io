@@ -13,6 +13,17 @@
            src: url('fonts/BoutiqueBitmap9x9_Bold_1.7.ttf') format('truetype');
            /* 如果字體文件有其他格式，也可以添加相應的src */
 }
+
+        body {
+           white-space: nowrap; /* 不換行 */
+}
+
+        h1,
+        .question p,
+        .options label,
+        #result {
+          white-space: nowrap; /* 不換行 */
+}
         
         body {
            font-family: 'BoutiqueBitmap9x9_Bold', sans-serif;
@@ -74,7 +85,7 @@
             color: #555; /* 調整文字顏色 */
             margin-bottom: 10px; /* 調整底部間距 */
             position: fixed;
-            top: 65%;
+            top: 68%;
             left: 50%; 
             transform: translateX(-50%); /* 使文字居中 */
         }
@@ -92,7 +103,7 @@
         .options {
             display: flex;
             position: fixed;
-            top: 80%;
+            top: 85%;
             left: 50%; 
             transform: translateX(-50%); /* 使選項居中 */
         }
