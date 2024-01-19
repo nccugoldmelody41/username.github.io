@@ -8,6 +8,11 @@
 
     <style>
 
+        img {
+          max-width: 100%;
+          height: auto;
+}
+        
         @font-face {
            font-family: 'BoutiqueBitmap9x9_Bold';
            src: url('fonts/BoutiqueBitmap9x9_Bold_1.7.ttf') format('truetype');
@@ -60,6 +65,27 @@
             font-size: 32px;
             text-align: center;
             top: 30%;
+        }
+
+                   /* 按鈕的樣式 */
+        button {
+            padding: 12px 20px; /* 調整按鈕內邊距 */
+            font-size: 18px; /* 調整字體大小 */
+            background-color: #4CAF50; /* 按鈕背景色 */
+            color: #fff; /* 按鈕文字顏色 */
+            border: none; /* 移除按鈕邊框 */
+            border-radius: 5px; /* 設定按鈕邊角半徑 */
+            cursor: pointer;
+        }
+        
+        /* 按鈕懸停效果 */
+        button:hover {
+            background-color: #45a049; /* 懸停時的背景色 */
+        }
+        
+        /* 按鈕按下效果 */
+        button:active {
+            background-color: #4CAF50; /* 按下時的背景色 */
         }
 
         #startTestButtonContainer button {
@@ -155,7 +181,7 @@
         <noscript><iframe src="https://i.imgur.com/Vw1t4IW.png" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
 
-            <p>你抵達目的地，突然冒出一個人塞給你一個東西，並告訴你：「帶上這個東西吧，它對你很有幫助。」你覺得會是什麼？
+            <p>抵達目的地，突然冒出一個人塞給你一個東西，並告訴你：「帶上這個東西吧，它對你很有幫助。」你覺得會是什麼？
 </p>
         <div class="options">
             <label><input type="radio" name="q2" value="1"> 青花瓷</label>
