@@ -37,6 +37,11 @@
                 background-image: url('https://i.imgur.com/a31jbfl.png'); /* 電腦版背景圖片 URL */
                 padding: 20px; /* 調整電腦版 padding */
             }
+    
+            img {
+               max-width: 100%;
+               height: auto;
+            }
 
             body {
                 white-space: nowrap; /* 不換行 */
@@ -48,10 +53,24 @@
                 #result {
                   white-space: nowrap; /* 不換行 */
         }
+                body {
+                   font-family: 'BoutiqueBitmap9x9_Bold', sans-serif;
+                   letter-spacing: 3px;
+                   line-height: 1.25;
+                   /* 使用字體，如果未能載入，則使用後面的通用字體 */
+        }
+                
+                 body {
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    color: #000000;
+                    overflow: hidden; /* 禁用滾動條 */
+                    margin: 0; /* 清除預設 margin */
+                    padding: 20px; /* 電腦版 padding */
+                }
         
             /* 電腦版文字位置和選項排列方式 */
             button {
-             
             font-family: 'BoutiqueBitmap9x9_Bold', sans-serif;
             /* 使用你想要的字體，如果未能載入，則使用後面的通用字體 */
             font-size: 16px; /* 設定字體大小，可以根據需要調整 */
