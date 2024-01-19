@@ -5,69 +5,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>運勢測驗</title> 
-<style>
-
-body {
-           background-size: cover;
-           background-repeat: no-repeat;
-           color: #000000;
-           font-family: 'Arial', sans-serif;
-           overflow: hidden; /* 禁用滾動條 */
+ <style>
+        body {
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: #000000;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden; /* 禁用滾動條 */
         }
-         
-         @media only screen and (max-width: 600px) {
+
+        @media only screen and (max-width: 600px) {
             body {
                 background-image: url('https://megapx-assets.dcard.tw/images/c556d922-ccfb-447e-814b-1907c3d1efc0/1280.webp'); /* 手機版背景圖片 URL */
+                padding: 10px; /* 調整手機版 padding */
             }
         }
 
         .question {
-             display: none;
-             background-size: cover;
+            display: none;
+            background-size: cover;
             background-repeat: no-repeat;
             background-position: center center;
+            margin-bottom: 20px;
         }
 
         @media only screen and (min-width: 601px) {
             body {
                 background-image: url('https://i.imgur.com/a31jbfl.png'); /* 電腦版背景圖片 URL */
+                padding: 20px; /* 調整電腦版 padding */
             }
-        }
-
-     </style>
-
-     <style>
-    /*一般樣式 */
-        body {
-            font-family: 'Arial', sans-serif;
-            padding: 20px;
-             }
-
-    /* 手機版樣式 */
-        @media only screen and (max-width: 600px) {
-        body {
-            padding: 10px;
-             } 
-        }
-     </style>
-
-     <style>
-        body {
-            font-family:'Arial', sans-serif;
-            margin: 20px;
-            text-align: center;
         }
 
         h1 {
             color: #333;
         }
 
-         /* 開始測驗按鈕樣式 */
-       #startTestButtonContainer button {
-           padding: 10px;
-           font-size: 16px;
-           cursor: pointer;
-           margin-bottom: 10px; /* 添加底部間距 */
+        /* 開始測驗按鈕樣式 */
+        #startTestButtonContainer button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-bottom: 10px; /* 添加底部間距 */
+        }
 
         .question {
             margin-bottom: 20px;
@@ -104,8 +83,7 @@ body {
             max-width: 600px; /* 限制結果區塊的最大寬度 */
             margin: 0 auto; /* 水平居中 */
         }
-
-      </style>
+    </style>
 
 </head>
 
