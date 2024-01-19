@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>金日冒險物語</title>
 
@@ -336,10 +337,8 @@
 
              // 檢查是手機版還是電腦版
         if (isMobile()) {
-            // 手機版
             showMobileQuestion(1);
         } else {
-            // 電腦版
             showDesktopQuestion(1);
         }
     }
@@ -350,12 +349,17 @@
         }
         
         // 在手機版顯示問題
-        function showMobileQuestion(questionNumber) {
-              
-               function showDesktopQuestion(questionNumber) {
-            // 顯示第一個問題
-            var firstQuestion = document.getElementById('question' + questionNumber);
-            firstQuestion.style.display = 'block';
+          function showMobileQuestion(questionNumber) {
+            showQuestion(questionNumber, setMobileQuestionBackground);
+        }
+
+        function showDesktopQuestion(questionNumber) {
+            showQuestion(questionNumber, setQuestionBackground);
+        }
+
+        function showQuestion(questionNumber, setBackgroundFunction) {
+            var currentQuestionElement = document.getElementById('question' + questionNumber);
+            currentQuestionElement.style.display = 'block';
         
             // 隱藏其他問題
             for (var i = 1; i <= 4; i++) {
@@ -363,6 +367,7 @@
                     var question = document.getElementById('question' + i);
                     question.style.display = 'none';
         }
+    }
 
                 // 切換手機版背景圖片
             setMobileQuestionBackground(questionNumber - 1);
@@ -383,28 +388,18 @@
                 document.body.style.backgroundSize = "cover";
                 document.body.style.backgroundRepeat = "no-repeat";
 }
-        
-            // 在電腦版顯示問題
-        function showDesktopQuestion(questionNumber) {
-            // 顯示第一個問題
-            var firstQuestion = document.getElementById('question' + questionNumber);
-            firstQuestion.style.display = 'block';
-        
-            // 隱藏其他問題
-            for (var i = 1; i <= 4; i++) {
-                if (i !== questionNumber) {
-                    var question = document.getElementById('question' + i);
-                    question.style.display = 'none';
-        }
-    }
-        
-            // 切換背景圖片
-            setQuestionBackground(questionNumber - 1);
-        }
+          function setQuestionBackground(questionIndex) {
+            questionIndex = Math.min(Math.max(questionIndex, 0), questionBackgrounds.length - 1);
 
+            document.body.style.backgroundImage = "url('" + questionBackgrounds[questionIndex] + "')";
+            document.body.style.backgroundSize = "cover";
+            document.body.style.backgroundRepeat = "no-repeat";
+        }
+        
         function showNextQuestion(nextQuestionId) {
     // 檢查是否有選擇答案
         var selectedAnswer = document.querySelector('input[name="q' + currentQuestion + '"]:checked');
+      
         if (!selectedAnswer) {
         alert('請選擇一個答案！');
         return;
@@ -419,16 +414,6 @@
     // 切換背景圖片
       currentQuestion++;
     setQuestionBackground(currentQuestion-1);
-}
-
-    function setQuestionBackground(questionIndex) {
-    // 確保索引在有效範圍內
-    questionIndex = Math.min(Math.max(questionIndex, 0), questionBackgrounds.length - 1);
-        
-    // 設置背景圖片
-    document.body.style.backgroundImage = "url('" + questionBackgrounds[questionIndex] + "')";
-    document.body.style.backgroundSize = "cover"; // 使背景圖片覆蓋整個屏幕
-    document.body.style.backgroundRepeat = "no-repeat";
 }
 
         function calculateScore() {
@@ -447,6 +432,7 @@
             hideQuizTitle();
             // 計算分數前，檢查最後一題是否有選擇答案
             var selectedAnswer = document.querySelector('input[name="q4"]:checked');
+           
             if (!selectedAnswer) {
                 alert('請選擇一個答案！');
                 return;
@@ -458,7 +444,6 @@
             calculateScore();
             document.getElementById('result').style.display = 'block';
 }
-
 
         function displayResult(score) {
          var resultDiv = document.getElementById('result');
