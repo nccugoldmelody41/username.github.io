@@ -153,6 +153,11 @@
                 padding: 10px; /* 手機版 padding */
             }
 
+            /* 隱藏除了標題和開始測試按鈕外的其他元素 */
+            .question, #result, .options, button {
+                display: none;
+            }
+
             /* 手機版文字位置和選項排列方式 */
             button {
             font-family: 'BoutiqueBitmap9x9_Bold', sans-serif;
@@ -214,7 +219,7 @@
             left: 50%; 
             transform: translateX(-50%); /* 使選項居中 */
         }
-
+    
         .options label {
             margin: 0 10px;
         }
