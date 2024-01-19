@@ -46,6 +46,7 @@
 
         h1 {
             color: #333;
+            font-size: 32px;
             text-align: center;
             top: 30%;
         }
@@ -73,8 +74,8 @@
             color: #555; /* 調整文字顏色 */
             margin-bottom: 10px; /* 調整底部間距 */
             position: fixed;
-            top: 70%; /* 距離底部的位置 */
-            left: 50%; /* 距離左邊的位置 */
+            top: 65%;
+            left: 50%; 
             transform: translateX(-50%); /* 使文字居中 */
         }
 
@@ -91,8 +92,8 @@
         .options {
             display: flex;
             position: fixed;
-            top: 80%; /* 距離底部的位置 */
-            left: 50%; /* 距離左邊的位置 */
+            top: 80%;
+            left: 50%; 
             transform: translateX(-50%); /* 使選項居中 */
         }
 
@@ -129,56 +130,58 @@
     <noscript><iframe src="https://i.imgur.com/vt8GaIt.png" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
 
-        <p>你現在已經把包包準備好要出門了，這時你發現還有一個空位可以塞東西，你會多帶什麼？</p>
+        <p>背上你的行囊，現在你面前有一個任意門，你想去哪裡？</p>
         <div class="options">
-            <label><input type="radio" name="q1" value="1000"> 環保餐具</label>
-            <label><input type="radio" name="q1" value="100"> 止汗劑</label>
-            <label><input type="radio" name="q1" value="10"> 筆記本</label>
-            <label><input type="radio" name="q1" value="1"> 集點卡</label>
+            <label><input type="radio" name="q1" value="100"> B612星球</label>
+            <label><input type="radio" name="q1" value="1000"> 桃花源</label>
+            <label><input type="radio" name="q1" value="1"> 亞特蘭提斯</label>
+            <label><input type="radio" name="q1" value="10"> 月球的背面</label>
         </div>
        <button onclick="showNextQuestion('question2')">下一題</button>
     </div>
 
     <div class="question" id="question2">
-        <noscript><iframe src="https://i.imgur.com/bO2EtGN.png" height="0" width="0"
+        <noscript><iframe src="https://i.imgur.com/Vw1t4IW.png" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
 
-            <p>如果在去上課的途中，你發現你的錢包不見了，你會怎麼做？</p>
+            <p>你抵達目的地，突然冒出一個人塞給你一個東西，並告訴你：「帶上這個東西吧，它對你很有幫助。」你覺得會是什麼？
+</p>
         <div class="options">
-            <label><input type="radio" name="q2" value="100"> 先問剛剛跟自己待在一起的夥伴</label>
-            <label><input type="radio" name="q2" value="10"> 先去上課</label>
-            <label><input type="radio" name="q2" value="1"> 媽呀是錢包欸，馬上報警</label>
-            <label><input type="radio" name="q2" value="1000"> 唉呀隨便啦，等等再說，該出現就會出現</label>
+            <label><input type="radio" name="q2" value="1"> 青花瓷</label>
+            <label><input type="radio" name="q2" value="1000"> 能量藥水</label>
+            <label><input type="radio" name="q2" value="100"> 魔鏡</label>
+            <label><input type="radio" name="q2" value="10"> 紫水晶/水晶球</label>
         </div>
       <button onclick="showNextQuestion('question3')">下一題</button>
     </div>
   
    <div class="question" id="question3">
 
-    <noscript><iframe src="https://i.imgur.com/27ppP4I.png" height="0" width="0"
+    <noscript><iframe src="https://i.imgur.com/YB1nMhS.png" height="0" width="0"
         style="display:none;visibility:hidden"></iframe></noscript>
 
-        <p>上完課了，路上突然冒出一個人塞給你一個東西，告訴你：「帶上這個東西吧，它對你很有幫助」你覺得會是什麼？</p>
+        <p>你的包包裝得滿滿的，希望找個地方休息，這時看見前方有一棵大樹，你驚呼：上面居然長滿了_____！
+</p>
         <div class="options">
-            <label><input type="radio" name="q3" value="1"> 青花瓷</label>
-            <label><input type="radio" name="q3" value="1000"> 能量藥水</label>
-            <label><input type="radio" name="q3" value="100"> 魔鏡</label>
-            <label><input type="radio" name="q3" value="10"> 紫水晶/水晶球</label>
+            <label><input type="radio" name="q3" value="1000"> 長生不老的仙丹</label>
+            <label><input type="radio" name="q3" value="100"> 聖誕老公公的拐杖糖</label>
+            <label><input type="radio" name="q3" value="10"> 瑪莉歐的無敵星星</label>
+            <label><input type="radio" name="q3" value="1"> 海盜的藏寶圖</label>
         </div>
      <button onclick="showNextQuestion('question4')">下一題</button>
     </div>
   
    <div class="question" id="question4">
 
-    <noscript><iframe src="https://i.imgur.com/ShInsIP.png" height="0" width="0"
+    <noscript><iframe src="https://i.imgur.com/nqTrFmL.png" height="0" width="0"
         style="display:none;visibility:hidden"></iframe></noscript>
 
-        <p>背上你的行囊，現在你面前有一個任意門，你想去哪裡？</p>
+        <p>旅程即將結束了，現在你可以選擇一項交通工具回到現實，你想選哪一個？</p>
         <div class="options">
-            <label><input type="radio" name="q4" value="100"> B612星球</label>
-            <label><input type="radio" name="q4" value="1000"> 桃花源</label>
-            <label><input type="radio" name="q4" value="1"> 亞特蘭提斯</label>
-            <label><input type="radio" name="q4" value="10"> 月球的背面</label>
+            <label><input type="radio" name="q4" value="100"> 仙杜瑞拉的南瓜馬車</label>
+            <label><input type="radio" name="q4" value="10"> 蝙蝠俠的跑車</label>
+            <label><input type="radio" name="q4" value="1"> 阿拉丁的魔毯</label>
+            <label><input type="radio" name="q4" value="1000"> 侏羅紀公園的翼龍</label>
 
         </div>
      <button onclick="completeTest()">完成測驗</button>
@@ -194,10 +197,10 @@
         var currentQuestion = 1;
 
         var questionBackgrounds = [
-            'https://i.imgur.com/vt8GaIt.png',
-            'https://i.imgur.com/bO2EtGN.png',
-            'https://i.imgur.com/27ppP4I.png',
-            'https://i.imgur.com/ShInsIP.png'
+            'https://i.imgur.com/J1o7ndi.png',
+            'https://i.imgur.com/Vw1t4IW.png',
+            'https://i.imgur.com/YB1nMhS.png',
+            'https://i.imgur.com/nqTrFmL.png'
 ];
 
         function hideQuizTitle() {
