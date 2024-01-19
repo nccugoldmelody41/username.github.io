@@ -5,94 +5,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>運勢測驗</title> 
- <style>
+<style>
+    body {
+        background-size: cover;
+        background-repeat: no-repeat;
+        color: #000000;
+        font-family: 'Arial', sans-serif;
+        overflow: hidden; /* 禁用滾動條 */
+    }
+
+    @media only screen and (max-width: 600px) {
         body {
-            background-size: cover;
-            background-repeat: no-repeat;
-            color: #000000;
-            font-family: 'Arial', sans-serif;
-            overflow: hidden; /* 禁用滾動條 */
+            background-image: url('https://megapx-assets.dcard.tw/images/c556d922-ccfb-447e-814b-1907c3d1efc0/1280.webp'); /* 手機版背景圖片 URL */
+            padding: 10px; /* 調整手機版 padding */
         }
+    }
 
-        @media only screen and (max-width: 600px) {
-            body {
-                background-image: url('https://megapx-assets.dcard.tw/images/c556d922-ccfb-447e-814b-1907c3d1efc0/1280.webp'); /* 手機版背景圖片 URL */
-                padding: 10px; /* 調整手機版 padding */
-            }
+    @media only screen and (min-width: 601px) {
+        body {
+            background-image: url('https://i.imgur.com/a31jbfl.png'); /* 電腦版背景圖片 URL */
+            padding: 20px; /* 調整電腦版 padding */
         }
+    }
 
-        .question {
-            display: none;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center center;
-            margin-bottom: 20px;
-        }
+    h1 {
+        color: #333;
+        margin: 0 auto; /* 水平居中 */
+        display: flex;
+        align-items: center; /* 垂直居中 */
+        justify-content: center;
+        height: 100vh; /* 100% 視窗高度 */
+    }
 
-        @media only screen and (min-width: 601px) {
-            body {
-                background-image: url('https://i.imgur.com/a31jbfl.png'); /* 電腦版背景圖片 URL */
-                padding: 20px; /* 調整電腦版 padding */
-            }
-        }
+    /* 開始測驗按鈕樣式 */
+    #startTestButtonContainer button {
+        padding: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-bottom: 10px; /* 添加底部間距 */
+        position: fixed;
+        top: 50%; /* 距離上部的位置 */
+        left: 50%; /* 距離左邊的位置 */
+        transform: translate(-50%, -50%); /* 使按鈕居中 */
+    }
 
-        h1 {
-            color: #333;
-            margin: 0 auto; /* 水平居中 */
-            display: flex;
-            top: 100px;
-            justify-content: center;
-        }
+    .question {
+        margin-bottom: 20px;
+        display: none;
+    }
 
-        /* 開始測驗按鈕樣式 */
-        #startTestButtonContainer button {
-            padding: 10px;
-            font-size: 16px;
-            cursor: pointer;
-            margin-bottom: 10px; /* 添加底部間距 */
-            display: fixed;
-            top: 250px;
-        }
+    .question p {
+        font-size: 20px; /* 調整文字大小 */
+        color: #555; /* 調整文字顏色 */
+        margin-bottom: 10px; /* 調整底部間距 */
+        position: fixed;
+        bottom: 50px; /* 距離底部的位置 */
+        right: 50px; /* 距離右邊的位置 */
+    }
 
-        .question {
-            margin-bottom: 20px;
-            display: none;
-        }
+    .question button {
+        padding: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        position: fixed;
+        bottom: 20px; /* 距離底部的位置 */
+        right: 20px; /* 距離右邊的位置 */
+    }
 
-        .question p {
-           font-size: 20px; /* 調整文字大小 */
-           color: #555; /* 調整文字顏色 */
-           margin-bottom: 10px; /* 調整底部間距 */
-           bottom: 200px; /* 距離底部的位置 */
-           left: 50px; /* 距離右邊的位置 */
-}
+    .options {
+        display: flex;
+        position: fixed;
+        bottom: 20px; /* 距離底部的位置 */
+        right: 50px; /* 距離右邊的位置 */
+    }
 
-        .question button {
-            padding: 10px;
-            font-size: 16px;
-            cursor: pointer;
-            position: fixed;
-            top: 500px; /* 距離上部的位置 */
-            right: 50px; /* 距離左邊的位置 */
-        }
+    .options label {
+        margin: 0 10px;
+    }
 
-        .options {
-            display: flex;
-            top: 370px; /* 距離底部的位置 */
-            left: 50px; /* 距離右邊的位置 */
-        }
-
-        .options label {
-            margin: 0 10px;
-        }
-
-        #result {
-            margin-top: 20px;
-            font-weight: bold; 
-            max-width: 600px; /* 限制結果區塊的最大寬度 */
-            margin: 0 auto; /* 水平居中 */
-        }
-    </style>
+    #result {
+        margin-top: 20px;
+        font-weight: bold; 
+        max-width: 600px; /* 限制結果區塊的最大寬度 */
+        margin: 0 auto; /* 水平居中 */
+    }
+</style>
 
 </head>
 
