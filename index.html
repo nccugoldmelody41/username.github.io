@@ -411,11 +411,17 @@ function setQuestionBackground(questionIndex) {
         // 隱藏目前的問題
         document.getElementById('question' + currentQuestion).style.display = 'none';
 
-       // 顯示下一個問題
+	// 顯示下一個問題
 	currentQuestion++;
-	showQuestion(currentQuestion, setQuestionBackground);
+        document.getElementById(nextQuestionId).style.display = 'block';
+
+        // 切換背景圖片
+        currentQuestion++;
+        setQuestionBackground(currentQuestion - 1);
+	    
+       
 }
-    function calculateScore() {
+    function calculateScore(){
         hideQuizTitle();
         var score = 0;
         var answers = document.querySelectorAll('input[name^="q"]:checked');
