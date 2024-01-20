@@ -328,92 +328,76 @@
         return window.innerWidth <= 600; // 假設寬度小於等於 600px 為手機版
     }
 
-    	var currentQuestion = 1;
+var currentQuestion = 1;
 
-        var MobileQuestionBackground = [
-            'https://i.imgur.com/c5EReNH.png',
-            'https://i.imgur.com/mkyouOp.png',
-            'https://i.imgur.com/3F2Ta5H.png',
-            'https://i.imgur.com/kvZqkGj.png'
-        ];
+var MobileQuestionBackground = [
+    'https://i.imgur.com/c5EReNH.png',
+    'https://i.imgur.com/mkyouOp.png',
+    'https://i.imgur.com/3F2Ta5H.png',
+    'https://i.imgur.com/kvZqkGj.png'
+];
 
-        function hideQuizTitle() {
-        // 隱藏運勢測驗標題
-        document.querySelector('#quizContainer h1').style.display = 'none';
+var questionBackgrounds = [
+    'https://i.imgur.com/J1o7ndi.png',
+    'https://i.imgur.com/Vw1t4IW.png',
+    'https://i.imgur.com/YB1nMhS.png',
+    'https://i.imgur.com/nqTrFmL.png'
+];
+
+function hideQuizTitle() {
+    // 隱藏運勢測驗標題
+    document.querySelector('#quizContainer h1').style.display = 'none';
+}
+
+function startTest() {
+    hideQuizTitle();
+    document.getElementById('startTestButtonContainer').style.display = 'none';
+
+    if (isMobile()) {
+        showMobileQuestion(currentQuestion);
+    } else {
+        showDesktopQuestion(currentQuestion);
     }
+}
 
-        function startTest() {
-        hideQuizTitle();
-        document.getElementById('startTestButtonContainer').style.display = 'none';
+function showMobileQuestion(questionNumber) {
+    showQuestion(questionNumber, setMobileQuestionBackground);
+}
 
-        function showMobileQuestion(questionNumber) {
-        showQuestion(questionNumber, setQuestionBackground);
-    }
+function showDesktopQuestion(questionNumber) {
+    showQuestion(questionNumber, setQuestionBackground);
+}
 
-	    function showQuestion(questionNumber) {
-	    var currentQuestionElement = document.getElementById('question' + questionNumber);
-	    currentQuestionElement.style.display = 'block';
+function showQuestion(questionNumber, setBackgroundFunction) {
+    var currentQuestionElement = document.getElementById('question' + questionNumber);
+    currentQuestionElement.style.display = 'block';
 
-    	// 隱藏其他問題
-    	for (var i = 1; i <= 4; i++) {
+    // 隱藏其他問題
+    for (var i = 1; i <= 4; i++) {
         if (i !== questionNumber) {
             var question = document.getElementById('question' + i);
             question.style.display = 'none';
         }
     }
 
-    setMobileQuestionBackground(questionNumber - 1);
+    setBackgroundFunction(questionNumber - 1);
 }
 
-		// 檢測是否為手機版
-        function isDesktop() {
-        return window.innerWidth > 600; // 假設寬度小於等於 600px 為手機版
-    }
+function setMobileQuestionBackground(questionIndex) {
+    questionIndex = Math.min(Math.max(questionIndex, 0), MobileQuestionBackground.length - 1);
 
-    var currentQuestion = 1;
+    document.body.style.backgroundImage = "url('" + MobileQuestionBackground[questionIndex] + "')";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundRepeat = "no-repeat";
+}
 
-    var questionBackgrounds = [
-        'https://i.imgur.com/J1o7ndi.png',
-        'https://i.imgur.com/Vw1t4IW.png',
-        'https://i.imgur.com/YB1nMhS.png',
-        'https://i.imgur.com/nqTrFmL.png'
-    ];
+function setQuestionBackground(questionIndex) {
+    questionIndex = Math.min(Math.max(questionIndex, 0), questionBackgrounds.length - 1);
 
-    function hideQuizTitle() {
-        // 隱藏運勢測驗標題
-        document.querySelector('#quizContainer h1').style.display = 'none';
-    }
-
-    function startTest() {
-        hideQuizTitle();
-        document.getElementById('startTestButtonContainer').style.display = 'none';
-
-    function showDesktopQuestion(questionNumber) {
-        showQuestion(questionNumber, setQuestionBackground);
-    }
-
-    function showQuestion(questionNumber, setBackgroundFunction) {
-        var currentQuestionElement = document.getElementById('question' + questionNumber);
-        currentQuestionElement.style.display = 'block';
-
-        // 隱藏其他問題
-        for (var i = 1; i <= 4; i++) {
-            if (i !== questionNumber) {
-                var question = document.getElementById('question' + i);
-                question.style.display = 'none';
-            }
-        }
-
-        setBackgroundFunction(questionNumber - 1);
-    }
-
-    function setQuestionBackground(questionIndex) {
-        questionIndex = Math.min(Math.max(questionIndex, 0), questionBackgrounds.length - 1);
-
-        document.body.style.backgroundImage = "url('" + questionBackgrounds[questionIndex] + "')";
-        document.body.style.backgroundSize = "cover";
-        document.body.style.backgroundRepeat = "no-repeat";
-    }
+    document.body.style.backgroundImage = "url('" + questionBackgrounds[questionIndex] + "')";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundRepeat = "no-repeat";
+}
 
     function showNextQuestion(nextQuestionId) {
         // 檢查是否有選擇答案
