@@ -348,9 +348,19 @@
     }
 
     function showMobileQuestion(questionNumber) {
-    showQuestion(questionNumber, setMobileQuestionBackground);
+    var currentQuestionElement = document.getElementById('question' + questionNumber);
+    currentQuestionElement.style.display = 'block';
+
+    // 隱藏其他問題
+    for (var i = 1; i <= 4; i++) {
+        if (i !== questionNumber) {
+            var question = document.getElementById('question' + i);
+            question.style.display = 'none';
+        }
     }
 
+    setMobileQuestionBackground(questionNumber - 1);
+}
 
     function showDesktopQuestion(questionNumber) {
         showQuestion(questionNumber, setQuestionBackground);
