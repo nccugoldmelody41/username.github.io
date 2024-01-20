@@ -348,6 +348,10 @@
     }
 
     function showMobileQuestion(questionNumber) {
+        showQuestion(questionNumber, setQuestionBackground);
+    }
+
+    function showQuestion(questionNumber) {
     var currentQuestionElement = document.getElementById('question' + questionNumber);
     currentQuestionElement.style.display = 'block';
 
