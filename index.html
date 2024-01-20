@@ -316,7 +316,18 @@
         </div>
 
 <script>
-	// 檢查是手機版還是電腦版
+
+function hideQuizTitle() {
+    // 隱藏運勢測驗標題
+    document.querySelector('#quizContainer h1').style.display = 'none';
+}
+
+function startTest() {
+    hideQuizTitle();
+    document.getElementById('startTestButtonContainer').style.display = 'none';
+    
+
+    // 檢查是手機版還是電腦版
         if (isMobile()) {
             showMobileQuestion(1);
         } else {
@@ -343,15 +354,6 @@ var questionBackgrounds = [
     'https://i.imgur.com/YB1nMhS.png',
     'https://i.imgur.com/nqTrFmL.png'
 ];
-
-function hideQuizTitle() {
-    // 隱藏運勢測驗標題
-    document.querySelector('#quizContainer h1').style.display = 'none';
-}
-
-function startTest() {
-    hideQuizTitle();
-    document.getElementById('startTestButtonContainer').style.display = 'none';
 
     if (isMobile()) {
         showMobileQuestion(currentQuestion);
@@ -408,19 +410,18 @@ function setQuestionBackground(questionIndex) {
             return;
         }
 
-        // 隱藏目前的問題
+         // 隱藏目前的問題
         document.getElementById('question' + currentQuestion).style.display = 'none';
 
-	// 顯示下一個問題
-	currentQuestion++;
+        // 顯示下一個問題
         document.getElementById(nextQuestionId).style.display = 'block';
 
         // 切換背景圖片
         currentQuestion++;
         setQuestionBackground(currentQuestion - 1);
-	    
-       
-}
+        
+    }
+
     function calculateScore(){
         hideQuizTitle();
         var score = 0;
