@@ -460,23 +460,7 @@
         } else if ([2002, 2020, 2200, 220, 202, 22, 1111].includes(score)) {
             resultImage.src = 'https://i.imgur.com/FiYaYr7.png';
         }
-    
-       var resultHTML = `
-        <html>
-            <head>
-                <title>測驗結果</title>
-            </head>
-            <body style="margin: 0; overflow: hidden;">
-                <img src="${resultImageSrc}" style="width: 100%; height: 100%; object-fit: cover;">
-            </body>
-        </html>
-    `;
-
-            // 將HTML寫入新窗口
-            var resultWindow = window.open('', '_blank');
-            resultWindow.document.write(resultHTML);
-            resultWindow.document.close();
-}
+   }
 </script>
 
 </body>
