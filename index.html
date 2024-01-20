@@ -445,6 +445,7 @@
     }
 
         function displayResult(score) {
+            var resultImageSrc = '';
             var resultDiv = document.getElementById('result');
             var resultImage = document.createElement('img');
         
@@ -465,8 +466,10 @@
             resultImage.alt = 'Contradiction Result';
         }
     
-        resultDiv.innerHTML = ''; // 清空結果區域的內容
-        resultDiv.appendChild(resultImage); // 將圖片元素添加到結果區域
+        var resultWindow = window.open('', '_blank');
+            resultWindow.document.write('<html><head><title>測驗結果</title></head><body style="margin: 0; overflow: hidden;">');
+            resultWindow.document.write('<img src="' + resultImageSrc + '" style="width: 100%; height: 100%; object-fit: cover;">');
+            resultWindow.document.write('</body></html>');
     }
 </script>
 
