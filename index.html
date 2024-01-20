@@ -333,6 +333,12 @@
     function startTest() {
         hideQuizTitle();
         document.getElementById('startTestButtonContainer').style.display = 'none';
+        
+        // 隱藏其他問題
+        for (var i = 2; i <= 4; i++) {
+            var question = document.getElementById('question' + i);
+            question.style.display = 'none';
+        }
 
         // 檢查是手機版還是電腦版
         if (isMobile()) {
@@ -349,7 +355,7 @@
 
     function showMobileQuestion(questionNumber) {
     var currentQuestionElement = document.getElementById('question' + questionNumber);
-    currentQuestionElement.style.display = 'block';
+    currentQuestionElement.style.display = 'none';
 
     // 隱藏其他問題
     for (var i = 1; i <= 4; i++) {
@@ -359,6 +365,9 @@
         }
     }
 
+    // 新增下面這行，使選項垂直排列
+    document.querySelector('.options').style.flexDirection = 'column';
+        
     setMobileQuestionBackground(questionNumber - 1);
 }
 
@@ -377,7 +386,7 @@
                 question.style.display = 'none';
             }
         }
-
+ㄨ
         setBackgroundFunction(questionNumber - 1);
     }
 
