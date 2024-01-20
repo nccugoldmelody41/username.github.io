@@ -121,6 +121,23 @@
                 margin: 0 10px;
             } 
 
+            #result {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.8); /* 背景透明白色，視覺效果可調整 */
+        }
+
+            #result img {
+                max-width: 100%;
+                max-height: 100%;
+            }
+
         /* 電腦版樣式 */
         @media only screen and (min-width: 601px) {
             body {
@@ -460,6 +477,9 @@
         } else if ([2002, 2020, 2200, 220, 202, 22, 1111].includes(score)) {
             resultImage.src = 'https://i.imgur.com/FiYaYr7.png';
         }
+
+        resultDiv.innerHTML = ''; // 清空結果區域的內容
+        resultDiv.appendChild(resultImage); // 將圖片元素添加到結果區域
    }
 </script>
 
