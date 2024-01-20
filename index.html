@@ -154,11 +154,6 @@
                 padding: 10px; /* 手機版 padding */
             }
 
-            /* 隱藏除了標題和開始測試按鈕外的其他元素 */
-            .question, #result, .options, button {
-                display: none;
-            }
-
             /* 手機版文字位置和選項排列方式 */
             button {
             font-family: 'BoutiqueBitmap9x9_Bold', sans-serif;
@@ -192,12 +187,13 @@
         }
             
         .question p {
-            font-size: 14px; /* 調整文字大小 */
+            font-size: 20px; /* 調整文字大小 */
             color: #555; /* 調整文字顏色 */
             margin-bottom: 10px; /* 調整底部間距 */
             position: fixed;
             top: 68%;
             left: 50%; 
+            transform: translateX(-50%); /* 使文字居中 */
         }
 
         .question button {
@@ -207,6 +203,7 @@
             position: fixed;
             bottom: 8%; /* 距離底部的位置 */
             right: 10%;
+            transform: translateX(50%); /* 使按鈕居中 */
         }
 
         .options {
@@ -216,6 +213,7 @@
             font-size: 20px;
             top: 60%;
             left: 50%; 
+            transform: translateX(-50%); /* 使選項居中 */
         }
     
         .options label {
@@ -349,10 +347,12 @@
     currentQuestionElement.style.display = 'block';
 
     // 隱藏其他問題
-    for (var i = 2; i <= 4; i++) {
+    for (var i = 1; i <= 4; i++) {
+        if (i !== questionNumber) {
             var question = document.getElementById('question' + i);
             question.style.display = 'none';
         }
+    }
 
     setMobileQuestionBackground(questionNumber - 1);
 }
@@ -378,6 +378,8 @@
 
     function setMobileQuestionBackground(questionIndex) {
         // 修改為手機版的背景圖片路徑
+        var currentQuestion = 1;
+
         var mobileBackgrounds = [
             'https://i.imgur.com/c5EReNH.png',
             'https://i.imgur.com/mkyouOp.png',
