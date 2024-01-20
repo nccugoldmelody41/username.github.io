@@ -30,7 +30,7 @@
             color: #333;
             font-size: 50px;
             text-align: center;
-            top: 50%;
+            bottom: 50%;
         }
 
        /* 手機版樣式 */
@@ -47,46 +47,49 @@
         
             #startTestButtonContainer button {
                 font-size: 20px;
-                top: 35%;
+                top: 50%;
+                right: 50%;
             }
             
-        .question {
-            margin-bottom: 20px;
-            display: none;
-        }
+            .question {
+                margin-bottom: 20px;
+                display: none;
+                max-width: 500px;
+                margin: 0 auto;
+            }
             
-        .question p {
-            font-size: 14px; /* 調整文字大小 */
-            color: #555; /* 調整文字顏色 */
-            margin-bottom: 10px; /* 調整底部間距 */
-            position: fixed;
-            top: 68%;
-            left: 50%; 
-        }
+            .question p {
+                font-size: 14px; /* 調整文字大小 */
+                color: #555; /* 調整文字顏色 */
+                margin-bottom: 10px; /* 調整底部間距 */
+                position: fixed;
+                bottom: 50%;
+                left: 20%; 
+            }
 
-        .question button {
-            padding: 10px;
-            font-size: 14px;
-            cursor: pointer;
-            position: fixed;
-            bottom: 8%; /* 距離底部的位置 */
-            right: 10%;
-            transform: translateX(-50%); /* 使按鈕居中 */
-        }
+            .question button {
+                padding: 10px;
+                font-size: 14px;
+                cursor: pointer;
+                position: fixed;
+                bottom: 50%; /* 距離底部的位置 */
+                right: 50%;
+                transform: translateX(-50%); /* 使按鈕居中 */
+            }
 
-        .options {
-            display: flex;
-            flex-direction: column;
-            font-size: 12px;
-            top: 60%;
-            left: 50%; 
-            transform: translateX(-50%); /* 使選項居中 */
-            max-width: 80%; 
-        }
+            .options {
+                display: flex;
+                flex-direction: column;
+                font-size: 12px;
+                top: 50%;
+                left: 10%; 
+                transform: translateX(-50%); /* 使選項居中 */
+                max-width: 80%; 
+            }
     
-        .options label {
-            margin: 0 10px;
-        } 
+            .options label {
+                margin: 0 10px;
+            } 
 
         /* 電腦版樣式 */
         @media only screen and (min-width: 601px) {
