@@ -299,6 +299,8 @@
     </div>
 
   <div class="result" id="result">
+         <noscript><iframe src="https://i.imgur.com/yCzWwRy.png" height="0" width="0"
+        style="display:none;visibility:hidden"></iframe></noscript>
 
         </div>
 
@@ -445,9 +447,7 @@
     }
 
         function displayResult(score) {
-            var resultImageSrc = '';
-            var resultDiv = document.getElementById('result');
-            var resultImage = document.createElement('img');
+            var resultImageSrc;
         
         if (score > 2000 && score !== 2002 && score !== 2020 && score !== 2200) {
             resultImage.src = 'https://i.imgur.com/FiYaYr7.png';
@@ -466,7 +466,9 @@
             resultImage.alt = 'Contradiction Result';
         }
     
-        var resultWindow = window.open('', '_blank');
+        var resultWindow = window.open(resultImageSrc, '_blank');
+
+            resultWindow.document.open();
             resultWindow.document.write('<html><head><title>測驗結果</title></head><body style="margin: 0; overflow: hidden;">');
             resultWindow.document.write('<img src="' + resultImageSrc + '" style="width: 100%; height: 100%; object-fit: cover;">');
             resultWindow.document.write('</body></html>');
