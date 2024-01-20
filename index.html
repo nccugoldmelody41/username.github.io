@@ -350,19 +350,6 @@
             setMobileQuestionBackground(questionNumber - 1);
         }
 
-        // 切換電腦版問題
-        function showDesktopQuestion(questionNumber) {
-            // 將所有問題隱藏
-            hideAllQuestions();
-
-            // 顯示指定的問題
-            var currentQuestionElement = document.getElementById('question' + questionNumber);
-            currentQuestionElement.style.display = 'block';
-
-            // 設置電腦版問題背景
-            setQuestionBackground(questionNumber - 1);
-        }
-
             // 設置手機版問題背景
         function setMobileQuestionBackground(questionIndex) {
             var mobileBackgrounds = [
@@ -379,6 +366,19 @@
             document.body.style.backgroundRepeat = "no-repeat";
         }
 
+           // 切換電腦版問題
+        function showDesktopQuestion(questionNumber) {
+            // 將所有問題隱藏
+            hideAllQuestions();
+
+            // 顯示指定的問題
+            var currentQuestionElement = document.getElementById('question' + questionNumber);
+            currentQuestionElement.style.display = 'block';
+
+            // 設置電腦版問題背景
+            setQuestionBackground(questionNumber - 1);
+        }
+    
         // 設置電腦版問題背景
         function setQuestionBackground(questionIndex) {
             questionIndex = Math.min(Math.max(questionIndex, 0), questionBackgrounds.length - 1);
@@ -395,45 +395,6 @@
                 question.style.display = 'none';
             }
         }
-
-    // 檢測是否為手機版
-    function isMobile() {
-        return window.innerWidth <= 600; // 假設寬度小於等於 600px 為手機版
-    }
-
-    function showMobileQuestion(questionNumber) {
-    var currentQuestionElement = document.getElementById('question' + questionNumber);
-    currentQuestionElement.style.display = 'block';
-
-    // 隱藏其他問題
-    for (var i = 1; i <= 4; i++) {
-        if (i !== questionNumber) {
-            var question = document.getElementById('question' + i);
-            question.style.display = 'none';
-        }
-    }
-
-    setMobileQuestionBackground(questionNumber - 1);
-}
-
-    function showDesktopQuestion(questionNumber) {
-        showQuestion(questionNumber, setQuestionBackground);
-    }
-
-    function showQuestion(questionNumber, setBackgroundFunction) {
-        var currentQuestionElement = document.getElementById('question' + questionNumber);
-        currentQuestionElement.style.display = 'block';
-
-        // 隱藏其他問題
-        for (var i = 1; i <= 4; i++) {
-            if (i !== questionNumber) {
-                var question = document.getElementById('question' + i);
-                question.style.display = 'none';
-            }
-        }
-
-        setBackgroundFunction(questionNumber - 1);
-    }
 
     function showNextQuestion(nextQuestionId) {
         // 檢查是否有選擇答案
