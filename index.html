@@ -348,19 +348,21 @@
     }
 
     function showMobileQuestion(questionNumber) {
+        // 將所有問題隱藏
+        hideAllQuestions();
+        
     var currentQuestionElement = document.getElementById('question' + questionNumber);
     currentQuestionElement.style.display = 'block';
 
-    // 隱藏其他問題
-    for (var i = 1; i <= 4; i++) {
-        if (i !== questionNumber) {
+        setMobileQuestionBackground(questionNumber - 1);
+    }
+
+        function hideAllQuestions() {
+        for (var i = 1; i <= 4; i++) {
             var question = document.getElementById('question' + i);
             question.style.display = 'none';
         }
     }
-
-    setMobileQuestionBackground(questionNumber - 1);
-}
 
     function showDesktopQuestion(questionNumber) {
         showQuestion(questionNumber, setQuestionBackground);
@@ -417,8 +419,9 @@
         // 隱藏目前的問題
         document.getElementById('question' + currentQuestion).style.display = 'none';
 
-        // 顯示下一個問題
-        document.getElementById(nextQuestionId).style.display = 'block';
+          // 顯示下一個問題
+        currentQuestion++;
+        showMobileQuestion(currentQuestion);
 
         // 切換背景圖片
         currentQuestion++;
