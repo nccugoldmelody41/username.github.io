@@ -466,8 +466,7 @@
             resultImage.alt = 'Contradiction Result';
         }
     
-        var resultWindow = window.open(resultImageSrc, '_blank');
-
+        var resultWindow = window.open('', '_blank');
             resultWindow.document.open();
             resultWindow.document.write('<html><head><title>測驗結果</title></head><body style="margin: 0; overflow: hidden;">');
             resultWindow.document.write('<img src="' + resultImageSrc + '" style="width: 100%; height: 100%; object-fit: cover;">');
