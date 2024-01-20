@@ -121,21 +121,16 @@
                 margin: 0 10px;
             } 
 
-            #result {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+             #result {
+                max-width: 600px; /* 限制結果區塊的最大寬度 */
+                margin: 0 auto; /* 水平居中 */
+                top: 50%; /* 距離上部的位置 */
+                left: 50%; /* 距離左邊的位置 */
+                transform: translate(-50%, -50%); /* 使結果居中 */
+                position: absolute; 
         }
 
-            #result img {
-                max-width: 100%;
-                max-height: 100%;
-            }
+            
 
         /* 電腦版樣式 */
         @media only screen and (min-width: 601px) {
@@ -463,22 +458,30 @@
     }
 
         function displayResult(score) {
-            var resultImageSrc;
+        var resultDiv = document.getElementById('result');
+        var resultImage = document.createElement('img');
         
         if (score > 2000 && score !== 2002 && score !== 2020 && score !== 2200) {
             resultImage.src = 'https://i.imgur.com/FiYaYr7.png';
+            resultImage.alt = 'Healthy Result';
         } else if ([400, 1300, 310, 301, 1210, 1201, 211].includes(score)) {
             resultImage.src = 'https://i.imgur.com/FiYaYr7.png';
+            resultImage.alt = 'Love Result';
         } else if ([40, 31, 130, 1030, 121, 1021, 1120].includes(score)) {
             resultImage.src = 'https://i.imgur.com/FiYaYr7.png';
+            resultImage.alt = 'Career Result';
         } else if ([4, 13, 103, 1003, 112, 1012, 1102].includes(score)) {
             resultImage.src = 'https://i.imgur.com/FiYaYr7.png';
+            resultImage.alt = 'Wealth Result';
         } else if ([2002, 2020, 2200, 220, 202, 22, 1111].includes(score)) {
             resultImage.src = 'https://i.imgur.com/FiYaYr7.png';
+            resultImage.alt = 'Contradiction Result';
         }
-
+    
         resultDiv.innerHTML = ''; // 清空結果區域的內容
         resultDiv.appendChild(resultImage); // 將圖片元素添加到結果區域
+}
+
    }
 </script>
 
