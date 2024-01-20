@@ -414,8 +414,15 @@ function setQuestionBackground(questionIndex) {
         document.getElementById('question' + currentQuestion).style.display = 'none';
 
         // 顯示下一個問題
-        document.getElementById(nextQuestionId).style.display = 'block';
+        currentQuestion++;
 
+        if (currentQuestion <= 4) {
+        showQuestion(currentQuestion, setQuestionBackground);
+        } else {
+        // 如果已經是最後一題，顯示測驗結果
+        calculateScore();
+        document.getElementById('result').style.display = 'block';
+    }
         // 切換背景圖片
         currentQuestion++;
         setQuestionBackground(currentQuestion - 1);
