@@ -24,7 +24,113 @@
             margin: 0; /* 清除預設 margin */
             background-size: cover;
             background-repeat: no-repeat;
-        }            
+        }
+
+       /* 手機版樣式 */
+        @media only screen and (max-width: 600px) {
+            body {
+                background-image: url('https://i.imgur.com/yCzWwRy.png');
+                padding: 10px; /* 手機版 padding */
+            }
+
+           h1 {
+            color: #333;
+            font-size: 50px;
+            text-align: center; /* 讓文字居中對齊 */
+            margin-top: 20%; /* 調整上邊距，使文字垂直居中 */
+            top: 50%;
+            display: flex;
+            white-space: nowrap;
+            position: absolute;
+            top: 30%;
+            left: 48%;
+            transform: translate(-50%, -50%);
+            max-width: 80%;
+            margin: 0 auto;
+        }
+            
+            button {
+            font-family: 'BoutiqueBitmap9x9_Bold', sans-serif;
+            /* 使用你想要的字體，如果未能載入，則使用後面的通用字體 */
+            font-size: 14px; 
+            padding: 12px 20px; 
+            background-color: #ffffff; 
+            color:  #000000;
+            border: none; /* 移除按鈕邊框 */
+            border-radius: 5px; /* 設定按鈕邊角半徑 */
+            cursor: pointer;
+        }
+        
+            #startTestButtonContainer button {
+                font-size: 20px;
+                margin-top: 10px; 
+                display: flex;
+                white-space: nowrap;
+                position: absolute;
+                top: 43%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                max-width: 80%;
+                margin: 0 auto;
+            }
+            
+            .question {
+                margin-bottom: 20px;
+                display: none;
+                max-width: 80%;
+            }
+            
+            .question p {
+                 font-size: 16px;
+                 color: #555;
+                 margin-bottom: 20px;
+                 position: fixed;
+                 top: 56%;
+                 left: 52%;
+                 transform: translateX(-50%);
+                 min-width: 80%;
+            }
+
+            .question button {
+                padding: 10px;
+                font-size: 14px;
+                display: flex;
+                white-space: nowrap;
+                position: absolute;
+                top: 92%;
+                left: 80%;
+                transform: translate(-50%, -50%);
+                max-width: 80%;
+                margin: 0 auto;
+            }
+
+            .options {
+                display: flex;
+                white-space: nowrap;
+                position: absolute;
+                flex-direction: column;
+                font-size: 15px;
+                top: 76%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                max-width: 80%;
+                margin: 0 auto;
+            }
+    
+            .options label {
+                margin: 0 10px;
+            } 
+
+             #result {
+                max-width: 600px; /* 限制結果區塊的最大寬度 */
+                margin: 0 auto; /* 水平居中 */
+                top: 50%; /* 距離上部的位置 */
+                left: 50%; /* 距離左邊的位置 */
+                transform: translate(-50%, -50%); /* 使結果居中 */
+                position: absolute; 
+        }
+
+            
 
         /* 電腦版樣式 */
         @media only screen and (min-width: 601px) {
@@ -128,110 +234,6 @@
         }
 
     }
-
-        /* 手機版樣式 */
-        @media only screen and (max-width: 600px) {
-            body {
-                background-image: url('https://i.imgur.com/yCzWwRy.png');
-                padding: 10px; /* 手機版 padding */
-            }
-
-           h1 {
-            color: #333;
-            font-size: 50px;
-            text-align: center; /* 讓文字居中對齊 */
-            margin-top: 20%; /* 調整上邊距，使文字垂直居中 */
-            top: 50%;
-            display: flex;
-            white-space: nowrap;
-            position: absolute;
-            top: 30%;
-            left: 48%;
-            transform: translate(-50%, -50%);
-            max-width: 80%;
-            margin: 0 auto;
-        }
-            
-            button {
-            font-family: 'BoutiqueBitmap9x9_Bold', sans-serif;
-            /* 使用你想要的字體，如果未能載入，則使用後面的通用字體 */
-            font-size: 14px; 
-            padding: 12px 20px; 
-            background-color: #ffffff; 
-            color:  #000000;
-            border: none; /* 移除按鈕邊框 */
-            border-radius: 5px; /* 設定按鈕邊角半徑 */
-            cursor: pointer;
-        }
-        
-            #startTestButtonContainer button {
-                font-size: 20px;
-                margin-top: 10px; 
-                display: flex;
-                white-space: nowrap;
-                position: absolute;
-                top: 43%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                max-width: 80%;
-                margin: 0 auto;
-            }
-            
-            .question {
-                margin-bottom: 20px;
-                display: none;
-                max-width: 80%;
-            }
-            
-            .question p {
-                 font-size: 16px;
-                 color: #555;
-                 margin-bottom: 20px;
-                 position: fixed;
-                 top: 56%;
-                 left: 52%;
-                 transform: translateX(-50%);
-                 min-width: 80%;
-            }
-
-            .question button {
-                padding: 10px;
-                font-size: 14px;
-                display: flex;
-                white-space: nowrap;
-                position: absolute;
-                top: 92%;
-                left: 80%;
-                transform: translate(-50%, -50%);
-                max-width: 80%;
-                margin: 0 auto;
-            }
-
-            .options {
-                display: flex;
-                white-space: nowrap;
-                position: absolute;
-                flex-direction: column;
-                font-size: 15px;
-                top: 76%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                max-width: 80%;
-                margin: 0 auto;
-            }
-    
-            .options label {
-                margin: 0 10px;
-            } 
-
-             #result {
-                max-width: 600px; /* 限制結果區塊的最大寬度 */
-                margin: 0 auto; /* 水平居中 */
-                top: 50%; /* 距離上部的位置 */
-                left: 50%; /* 距離左邊的位置 */
-                transform: translate(-50%, -50%); /* 使結果居中 */
-                position: absolute; 
-        }
             
     </style>
 
