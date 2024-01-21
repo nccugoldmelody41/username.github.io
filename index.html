@@ -263,7 +263,7 @@
     </div>
 
     <div class="question" id="question2">
-        <noscript><iframe src="https://i.imgur.com/Ny01tSI.png" height="0" width="0"
+        <noscript><iframe src="https://i.imgur.com/YB1nMhS.png" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
 
             <p>路途中突然有人塞給你一樣東西，並告訴你：「帶上這個東西吧，它對你很有幫助。」你覺得會是什麼？
@@ -279,7 +279,7 @@
   
    <div class="question" id="question3">
 
-    <noscript><iframe src="hhttps://i.imgur.com/VAjOu3k.png" height="0" width="0"
+    <noscript><iframe src="https://i.imgur.com/Vw1t4IW.png" height="0" width="0"
         style="display:none;visibility:hidden"></iframe></noscript>
 
         <p>你的包包裝得滿滿的，希望能找個地方休息，這時看見前方有一棵大樹，你驚呼：上面居然長滿了_____！
@@ -320,8 +320,8 @@
 
     var questionBackgrounds = [
         'https://i.imgur.com/vt8GaIt.png',
-        'https://i.imgur.com/Ny01tSI.png',
-        'https://i.imgur.com/VAjOu3k.png',
+        'https://i.imgur.com/YB1nMhS.png',
+        'https://i.imgur.com/Vw1t4IW.png',
         'https://i.imgur.com/nqTrFmL.png'
     ];
 
@@ -386,34 +386,22 @@
         var currentQuestion = 1;
 
         var mobileBackgrounds = [
-            'https://i.imgur.com/vt8GaIt.png',
-            'https://i.imgur.com/Ny01tSI.png',
-            'https://i.imgur.com/VAjOu3k.png',
-            'https://i.imgur.com/nqTrFmL.png'
+            'https://i.imgur.com/2iZ0YUT.png',
+            'https://i.imgur.com/sBMrokV.png',
+            'https://i.imgur.com/GT43lLt.png',
+            'https://i.imgur.com/RXC9uX2.png'
         ];
 
         questionIndex = Math.min(Math.max(questionIndex, 0), mobileBackgrounds.length - 1);
 
-        var currentQuestionContainer = document.getElementById('question' + currentQuestion);
         document.body.style.backgroundImage = "url('" + mobileBackgrounds[questionIndex] + "')";
         document.body.style.backgroundSize = "cover";
         document.body.style.backgroundRepeat = "no-repeat";
     }
 
     function setQuestionBackground(questionIndex) {
-    var currentQuestion = 1;        
-    var questionBackgrounds = [
-        'https://i.imgur.com/vt8GaIt.png',
-        'https://i.imgur.com/NA2Biea.png',  
-        'https://i.imgur.com/YB1nMhS.png',  
-        'https://i.imgur.com/nqTrFmL.png'
-    ];
-
-    
-    function setQuestionBackground(questionIndex) {
         questionIndex = Math.min(Math.max(questionIndex, 0), questionBackgrounds.length - 1);
 
-        var currentQuestionContainer = document.getElementById('question' + currentQuestion);
         document.body.style.backgroundImage = "url('" + questionBackgrounds[questionIndex] + "')";
         document.body.style.backgroundSize = "cover";
         document.body.style.backgroundRepeat = "no-repeat";
