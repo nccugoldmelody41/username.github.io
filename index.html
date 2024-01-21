@@ -386,10 +386,10 @@
         var currentQuestion = 1;
 
         var mobileBackgrounds = [
-            'https://i.imgur.com/c5EReNH.png',
-            'https://i.imgur.com/ibQy7Rq.png',
-            'https://i.imgur.com/xE3JleO.png',
-            'https://i.imgur.com/kvZqkGj.png'
+            'https://i.imgur.com/vt8GaIt.png',
+            'https://i.imgur.com/Ny01tSI.png',
+            'https://i.imgur.com/VAjOu3k.png',
+            'https://i.imgur.com/nqTrFmL.png'
         ];
 
         questionIndex = Math.min(Math.max(questionIndex, 0), mobileBackgrounds.length - 1);
@@ -399,6 +399,16 @@
         document.body.style.backgroundRepeat = "no-repeat";
     }
 
+    function setQuestionBackground(questionIndex) {
+    var currentQuestion = 1;        
+    var questionBackgrounds = [
+        'https://i.imgur.com/vt8GaIt.png',
+        'https://i.imgur.com/NA2Biea.png',  
+        'https://i.imgur.com/YB1nMhS.png',  
+        'https://i.imgur.com/nqTrFmL.png'
+    ];
+
+    
     function setQuestionBackground(questionIndex) {
         questionIndex = Math.min(Math.max(questionIndex, 0), questionBackgrounds.length - 1);
 
