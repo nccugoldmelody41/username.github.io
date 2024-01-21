@@ -394,6 +394,7 @@
 
         questionIndex = Math.min(Math.max(questionIndex, 0), mobileBackgrounds.length - 1);
 
+        var currentQuestionContainer = document.getElementById('question' + currentQuestion);
         document.body.style.backgroundImage = "url('" + mobileBackgrounds[questionIndex] + "')";
         document.body.style.backgroundSize = "cover";
         document.body.style.backgroundRepeat = "no-repeat";
@@ -412,6 +413,7 @@
     function setQuestionBackground(questionIndex) {
         questionIndex = Math.min(Math.max(questionIndex, 0), questionBackgrounds.length - 1);
 
+        var currentQuestionContainer = document.getElementById('question' + currentQuestion);
         document.body.style.backgroundImage = "url('" + questionBackgrounds[questionIndex] + "')";
         document.body.style.backgroundSize = "cover";
         document.body.style.backgroundRepeat = "no-repeat";
