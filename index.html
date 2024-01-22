@@ -403,7 +403,7 @@
         questionIndex = Math.min(Math.max(questionIndex, 0), questionBackgrounds.length - 1);
 
         document.body.style.backgroundImage = "url('" + questionBackgrounds[questionIndex] + "')";
-        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundSize = "contain";
         document.body.style.backgroundRepeat = "no-repeat";
     }
 
