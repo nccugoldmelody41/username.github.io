@@ -379,6 +379,10 @@
 
     function showQuestion(questionNumber, setBackgroundFunction) {
         var currentQuestionElement = document.getElementById('question' + questionNumber);
+
+         // 在這裡添加 console.log
+        console.log(currentQuestionElement);
+        
         currentQuestionElement.style.display = 'block';
 
         // 隱藏其他問題
