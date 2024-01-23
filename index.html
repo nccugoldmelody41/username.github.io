@@ -31,6 +31,22 @@
                 background-image: url('https://i.imgur.com/GmjSkqx.jpg');
                 padding: 10px; /* 手機版 padding */
             }
+
+           h1 {
+            color: #333;
+            font-size: 50px;
+            text-align: center; /* 讓文字居中對齊 */
+            margin-top: 20%; /* 調整上邊距，使文字垂直居中 */
+            top: 50%;
+            display: flex;
+            white-space: nowrap;
+            position: absolute;
+            top: 30%;
+            left: 48%;
+            transform: translate(-50%, -50%);
+            max-width: 80%;
+            margin: 0 auto;
+        }
             
             button {
             font-family: 'BoutiqueBitmap9x9_Bold', sans-serif;
@@ -115,7 +131,7 @@
         /* 電腦版樣式 */
         @media only screen and (min-width: 601px) {
             body {
-                background-image: url('https://i.imgur.com/GmjSkqx.jpg'); /* 電腦版背景圖片 URL */
+                background-image: url('https://i.imgur.com/a31jbfl.png'); /* 電腦版背景圖片 URL */
                 padding: 20px; /* 調整電腦版 padding */
             }
 
@@ -220,7 +236,8 @@
 </head>
 
 <body>
-  <div id="quizContainer">
+ <div id="quizContainer">
+
   <div id="startTestButtonContainer">
         <button onclick="startTest()">開始測試</button>
     </div>
@@ -458,7 +475,7 @@
 
         resultImage.style.maxWidth = '100%';
         resultImage.style.height = 'auto';
-            
+
         resultDiv.innerHTML = ''; // 清空結果區域的內容
         resultDiv.appendChild(resultImage); // 將圖片元素添加到結果區域
    }
