@@ -386,6 +386,9 @@
             if (i !== questionNumber) {
                 var question = document.getElementById('question' + i);
                 question.style.display = 'none';
+                 question.classList.remove('question4'); // 移除 question4 class
+            } else {
+            question.classList.add('question4'); // 添加 question4 class
             }
         }
         
