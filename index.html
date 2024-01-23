@@ -213,8 +213,6 @@
 </head>
 
 <body>
- <div id="quizContainer">
-    <h1>金日冒險物語</h1>
 
   <div id="startTestButtonContainer">
         <button onclick="startTest()">開始測試</button>
@@ -297,6 +295,11 @@
         'https://i.imgur.com/GT43lLt.png',
         'https://i.imgur.com/RXC9uX2.png'
     ];
+
+    function hideQuizTitle() {
+        // 隱藏運勢測驗標題
+        document.querySelector('#quizContainer h1').style.display = 'none';
+    }
 
     function startTest() {
         hideQuizTitle();
