@@ -124,21 +124,22 @@
             .options label {
                 margin: 0 10px;
             } 
-
-             #result {
+            
+            .question:last-child + .result {
+                display: block; /* 顯示結果區域，當最後一個問題之後的 .result 出現時 */
+            }
+            
+            .result {
                 background: none !important;
                 overflow: hidden;
-                margin: 0 auto; /* 水平居中 */
+                margin: 0 auto;
                 background-size: cover;
                 background-repeat: no-repeat;
                 height: 100%;
                 min-width: 100%;
-                display: none; 
-        }
+                display: none; /* 隱藏結果區域 */
+            }
 
-            .question:last-child .result {
-                display: block; /* 顯示結果區域，當最後一個問題出現時 */
-}
             
 
         /* 電腦版樣式 */
