@@ -448,7 +448,7 @@
         var answers = document.querySelectorAll('input[name^="q"]:checked');
 
         for (var i = 0; i < answers.length; i++) {
-            score += parseInt(answers[i].value);
+            score += parseInt(answers[i].value, 10);
         }
 
         displayResult(score);
