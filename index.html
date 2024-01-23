@@ -126,6 +126,7 @@
             } 
 
              #result {
+                background: none;
                 overflow: hidden;
                 margin: 0 auto; /* 水平居中 */
                 background-size: cover;
@@ -314,7 +315,7 @@
 
   <div class="result" id="result">
          <div class="result" id="result">
-         <img id="resultImage" alt="Quz Result">
+         <img id="resultImage">
 </div>
 
         </div>
@@ -442,6 +443,20 @@
 
         displayResult(score);
     }
+
+    function completeTest() {
+    hideQuizTitle();
+
+    // 將問題區域隱藏
+    document.getElementById('question' + currentQuestion).style.display = 'none';
+
+    // 顯示測驗結果
+    calculateScore();
+    
+    // 設置結果頁面背景為透明
+    document.getElementById('result').style.background = 'none';
+    document.getElementById('result').style.display = 'block';
+}
 
     function completeTest() {
         hideQuizTitle();
