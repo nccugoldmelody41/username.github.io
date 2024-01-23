@@ -483,13 +483,10 @@
         resultImage.style.maxWidth = '100%';
         resultImage.style.height = 'auto';
 
-        var downloadLink = document.createElement('a');
-        downloadLink.href = resultImage.src;
-        downloadLink.download = 'result_image.png';  // 设置下载时的文件名
-        downloadLink.appendChild(resultImage);
-
         resultDiv.innerHTML = ''; // 清空結果區域的內容
         resultDiv.appendChild(resultImage); // 將圖片元素添加到結果區域
+
+        resultDiv.style.background = 'none';
    }
 </script>
      
