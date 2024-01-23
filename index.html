@@ -118,13 +118,6 @@
                 background-image: url('https://i.imgur.com/GmjSkqx.jpg'); /* 電腦版背景圖片 URL */
                 padding: 20px; /* 調整電腦版 padding */
             }
-
-            h1 {
-            color: #333;
-            font-size: 50px;
-            text-align: center;
-            top: 50%;
-        }
             
             img {
                max-width: 100%;
@@ -461,7 +454,7 @@
         resultImage.style.maxWidth = '100%';
         resultImage.style.height = 'auto';
 
-        resultDiv.style.backgroundImage = 'none'; 
+        resultDiv.style.background = 'none'; 
         resultDiv.innerHTML = ''; // 清空結果區域的內容
         resultDiv.appendChild(resultImage); // 將圖片元素添加到結果區域
    }
