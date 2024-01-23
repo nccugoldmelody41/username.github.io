@@ -455,20 +455,6 @@
     }
 
     function completeTest() {
-    hideQuizTitle();
-
-    // 將問題區域隱藏
-    document.getElementById('question' + currentQuestion).style.display = 'none';
-
-    // 顯示測驗結果
-    calculateScore();
-    
-    // 設置結果頁面背景為透明
-    document.getElementById('result').style.background = 'none';
-    document.getElementById('result').style.display = 'block';
-}
-
-    function completeTest() {
         hideQuizTitle();
         // 計算分數前，檢查最後一題是否有選擇答案
         var selectedAnswer = document.querySelector('input[name="q4"]:checked');
