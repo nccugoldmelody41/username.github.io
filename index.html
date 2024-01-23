@@ -28,7 +28,7 @@
        /* 手機版樣式 */
         @media only screen and (max-width: 600px) {
             body {
-                background-image: url('https://i.imgur.com/yCzWwRy.png');
+                background-image: url('https://i.imgur.com/GmjSkqx.jpg');
                 padding: 10px; /* 手機版 padding */
             }
 
@@ -473,7 +473,10 @@
             resultImage.src = 'https://i.imgur.com/jua4LSj.jpg';
             resultImage.alt = 'Contradiction Result';
         }
-    
+
+        resultImage.style.maxWidth = '100%';
+        resultImage.style.height = 'auto';
+            
         resultDiv.innerHTML = ''; // 清空結果區域的內容
         resultDiv.appendChild(resultImage); // 將圖片元素添加到結果區域
    }
